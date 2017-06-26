@@ -21,6 +21,7 @@
     "chai": "^4.0.2",
     "express": "^4.15.3",
     "mocha": "^3.4.2",
-    "mongoose": "^4.11.0"
+    "mongoose": "^4.11.0",
+    "redis-connection": "^5.1.1"
   }
 }
