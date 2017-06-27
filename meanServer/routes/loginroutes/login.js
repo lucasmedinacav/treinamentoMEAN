@@ -14,7 +14,7 @@ rotas.get('/user', function(request, response){
 
 
 }).get('/teste', function(request, response){
-    console.log('Rota de teste Login');
+    console.log('Rota de teste Login2');
     response.end();
 });
 
