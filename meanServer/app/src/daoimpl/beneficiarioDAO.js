@@ -9,12 +9,14 @@ function BeneficiarioDAO(){
 }
 
 function inserirBeneficiario(nome, idMoipl){
-    beneficiarioModel.create({nome : nome, idMoipl : idMoipl},function(erro, succsess){
-        if(erro){
-            throw erro;
-        }
-        console.log(sucsess);
-    });
+    return new Promisse(function(resolve, reject){
+        beneficiarioModel.create({nome : nome, idMoipl : idMoipl},function(erro, succsess){
+            if(erro){
+                throw erro;
+            }
+            console.log(sucsess);
+        });
+    })
 }
 
 function buscarBeneficiario(){
