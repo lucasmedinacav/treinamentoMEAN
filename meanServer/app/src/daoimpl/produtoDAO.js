@@ -1,15 +1,33 @@
 'use restrict';
 let mongoose = require('mongoose');
-let usuarioSchema = require('../schema/produtoSchema')
-let model = mongoose.model("usuario", usuarioSchema);
+let produtoSchema = require('../schema/produtoSchema')
+let produtoModel = mongoose.model("produto", produtoSchema);
 
 function ProdutoDAO(){
     this.inserirProduto = inserirProduto;
+    this.bucarProduto = bucarProduto;
 }
 
 
 function inserirProduto(nomeProd, desc, valor, quantidade, caminho){
-    model.create({nome : nomeProd, descricao : desc, quantidade: quantidade, caminhoImagem : caminho})
+    produtoModel.create({nome : nomeProd, descricao : desc, quantidade: quantidade, caminhoImagem : caminho}, function(erro, succsess){
+        if(erro){
+            throw erro;
+        }
+        console.log(succsess);
+    })
+}
+
+function bucarProduto(){
+    return new Promise(function(resolve, reject){
+        produtoModel.find(function(erro, succsess){
+        if(erro){
+            throw erro;
+        }
+        resolve(succsess);
+        });
+        
+    })
 }
 
 module.exports = new ProdutoDAO();

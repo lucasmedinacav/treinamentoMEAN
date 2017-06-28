@@ -1,13 +1,17 @@
 'use restrict';
 let mongoose = require('mongoose');
-let carroSchema = require('../schema/carroSchema');
+let produtoSchema = require('./produtoSchema');
 let Schema = mongoose.Schema;
 
 var pedido = new Schema({    
     status : {type : String, require: true},
-    data : {type : Date},
-    total : {type : Number, require: true}
-    
+    dataPedido : {type : Date},
+    itens : {type : [{ produto : produtoSchema, 
+                quantidade: Number, 
+                valorUnitario : Number, 
+                valorTotal : Number}], 
+                require : true},
+    totalPedido : {type : Number , require : true}
 });
 
 module.exports = pedido;

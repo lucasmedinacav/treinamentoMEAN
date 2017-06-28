@@ -1,8 +1,52 @@
 var produtoDao = require('../daoimpl/produtoDAO');
+var pedidoDao = require('../daoimpl/pedidoDao');
+
 var mongoose = require('mongoose');
-let uri = 'mongodb://localhost:27017/mean';
+let uri = 'mongodb://localhost:27017/gojohny';
+
+
+
 mongoose.connect(uri);
-produtoDao.inserirProduto('testeNome', 'testeDescricao', 50.00, 4, 'testeCaminho');
+// produtoDao.inserirProduto("TV", "TV 42 polegadas", 2000.20, 7, "caminho_indefinido");
+// produtoDao.inserirProduto("DVD", "Dvd novo Com visor", 150.99, 30, "caminho_indefinido");
+produtoDao.bucarProduto().then(function(data){
+  var produto = data[0];
+  var itens = [
+              {produto, 
+               quantidade: 10, 
+               valorUnitario : 4.0,
+               valorTotal : 50.2
+              },
+              {produto, 
+               quantidade: 10, 
+               valorUnitario : 4.0,
+               valorTotal : 50.2
+              }
+            ] ;
+            console.log(itens);
+
+            pedidoDao.inserirPedido("Ok", new Date(), itens,50.00)
+});        
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 mongoose.connection.on('connected', function () {  
