@@ -1,3 +1,9 @@
+var express = require('express');
+var mongoose = require('../../../lib');
+
+var uri = 'mongodb://localhost:27017';
+global.db = mongoose.createConnection(uri);
+
 var express = require('express'); //Importando o modulo do express
 var app = express(); //Obtem o 'objeto' express que sera usado para configurar a aplicacao
 
