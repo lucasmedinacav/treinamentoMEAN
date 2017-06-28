@@ -8,12 +8,12 @@ import "../polyfills";
 
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
-import { CustomModal } from './custom-modal-sample';
+import { LoginModal } from './login-modal/login-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomModal
+    LoginModal
   ],
   imports: [
     BrowserModule,
@@ -23,6 +23,6 @@ import { CustomModal } from './custom-modal-sample';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ CustomModal ]
+  entryComponents: [ LoginModal ]
 })
 export class AppModule { }
