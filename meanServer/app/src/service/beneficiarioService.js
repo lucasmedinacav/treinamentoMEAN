@@ -6,7 +6,9 @@ function BeneficiarioService(){
 
 
 function inserirBeneficiario(nome, idMoipl){
-  return beneficiarioDao.inserirBeneficiario().then().promise.catch(err => {
+  return beneficiarioDao.inserirBeneficiario(nome, idMoipl).then(function(retorno){
+      console.log("inserido beneficiario com sucesso");
+  }).promise.catch(err => {
       console.log("Passou!!!");
   })
 }

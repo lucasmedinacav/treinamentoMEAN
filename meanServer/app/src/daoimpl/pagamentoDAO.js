@@ -15,18 +15,18 @@ function inserirPagamento(dataComHora, statusPagamento, tipoPag, vlr, beneficiar
             if(erro){
                 throw erro;
             }
-            console.log(sucsess);
+            resolve(success);
         });
     })
 }
 
-function buscarPagamento(dataComHora, statusPagamento, tipoPag, vlr, beneficiariosPagamento, quantidade){
+function buscarPagamento(){
     return new Promisse(function(resolve, reject){
         model.find(function(erro, success){
             if(erro){
                 throw erro;
             }
-            console.log(success);
+            resolve(success)
         });
     })
 }

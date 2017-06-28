@@ -4,13 +4,20 @@ function PagamentoService(){
 }
 
 function inserirPagamento(dataComHora, statusPagamento, tipoPag, vlr, beneficiariosPagamento, quantidade){
-  return pagamentoDAO.inserirBeneficiario().then().promise.catch(err => {
-      console.log("Passou!!!");
+  return pagamentoDAO.inserirBeneficiario(dataComHora, statusPagamento, tipoPag, vlr, beneficiariosPagamento, quantidade).then(function(retorno){]
+                  
+        console.log("Consulta Efetuada");        
+      }).promise.catch(err => {
+        console.log("erro");
   })
 }
 
 
-
+function buscaPagamento(){
+    return pagamentoDAO.buscarPagamento().then(function(retorno){
+        console.log("consulta efetuada com sucesso");
+     }).catch();
+}
 
 
 

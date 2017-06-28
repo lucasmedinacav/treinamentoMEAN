@@ -14,7 +14,7 @@ function inserirBeneficiario(nome, idMoipl){
             if(erro){
                 throw erro;
             }
-            console.log(sucsess);
+            resolve(success);
         });
     })
 }
@@ -24,7 +24,7 @@ function buscarBeneficiario(){
         if(erro){
             throw erro;
         }
-        console.log(sucsess);
+        resolve(success);
     });
 }
 
