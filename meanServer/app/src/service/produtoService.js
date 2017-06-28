@@ -2,8 +2,10 @@ var produtoDao = require('../daoimpl/produtoDAO');
 var mongoose = require('mongoose');
 let uri = 'mongodb://localhost:27017/mean';
 mongoose.connect(uri);
-produtoDao.inserirProduto('testeNome', 'testeDescricao', 50.00, 4, 'testeCaminho');
 
+exports.inserirProduto = function (nomeProd, desc, valor, quantidade, caminho, callback) {
+  return produtoDao.inserirProduto(nomeProd, desc, valor, quantidade, caminho, callback);
+}
 
 mongoose.connection.on('connected', function () {  
   console.log('Mongoose default connection open to ' + uri);
