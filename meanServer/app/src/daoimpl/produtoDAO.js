@@ -1,15 +1,14 @@
 'use restrict';
-let mongoose = require('mongoose');
-let usuarioSchema = require('../schema/produtoSchema')
-let model = mongoose.model("usuario", usuarioSchema);
+var produtoRedisDao = require('../cache/produtoRedisDAO');
+var produtoMongoseDao = require('../mongose/produtoMongoseDAO');
 
 function ProdutoDAO(){
     this.inserirProduto = inserirProduto;
 }
 
-
 function inserirProduto(nomeProd, desc, valor, quantidade, caminho){
-    model.create({nome : nomeProd, descricao : desc, quantidade: quantidade, caminhoImagem : caminho})
+    produtoRedisDao.inserirProdutoCache(omeProd,{nome : nomeProd, descricao : desc, quantidade: quantidade, caminhoImagem : caminho})
+    produtoMongoseDao.inserirProdutoMongose({nome : nomeProd, descricao : desc, quantidade: quantidade, caminhoImagem : caminho})
 }
 
 module.exports = new ProdutoDAO();
