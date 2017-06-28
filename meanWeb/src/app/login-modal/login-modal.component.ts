@@ -3,39 +3,28 @@ import { Component } from '@angular/core';
 import { DialogRef, ModalComponent, CloseGuard } from 'angular2-modal';
 import { BSModalContext } from 'angular2-modal/plugins/bootstrap';
 
-// export class CustomModalContext extends BSModalContext {
+import { Login } from './login.object';
+
 export class LoginModalContext extends BSModalContext {
-  public num1: number;
-  public num2: number;
 }
 
 @Component({
   selector: 'modal-content',
   styles: [],
-  templateUrl: 'login-modal.html'
+  styleUrls: ['login-modal.component.css'],
+  templateUrl: 'login-modal.component.html'
 })
 export class LoginModal implements CloseGuard, ModalComponent<LoginModalContext> {
-  context: LoginModalContext;
 
-  public wrongAnswer: boolean;
+  public opcao: boolean;
+  public login: Login;
 
   constructor(public dialog: DialogRef<LoginModalContext>) {
-    this.context = dialog.context;
-    this.wrongAnswer = true;
-    dialog.setCloseGuard(this);
+    this.opcao = true;
+    this.login = {email: `batatinha@gmail.com`, senha:`12345678910`};
   }
 
-  onKeyUp(value) {
-    this.wrongAnswer = value != 5;
+  close():void {
     this.dialog.close();
-  }
-
-
-  beforeDismiss(): boolean {
-    return true;
-  }
-
-  beforeClose(): boolean {
-    return this.wrongAnswer;
   }
 }

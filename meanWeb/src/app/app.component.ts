@@ -15,8 +15,7 @@ export class AppComponent {
   constructor(public modal: Modal) {}
 
   openLoginModal() {
-    console.log("abre modal de login");
-    return this.modal.open(LoginModal,  overlayConfigFactory({ num1: 2, num2: 3 }, BSModalContext));
+    return this.modal.open(LoginModal, overlayConfigFactory({}, BSModalContext));
   }
 
 }

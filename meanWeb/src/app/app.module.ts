@@ -9,6 +9,7 @@ import "../polyfills";
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { LoginModal } from './login-modal/login-modal.component';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginModal } from './login-modal/login-modal.component';
     BrowserModule,
     AppRoutingModule,
     ModalModule.forRoot(),
-    BootstrapModalModule
+    BootstrapModalModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
