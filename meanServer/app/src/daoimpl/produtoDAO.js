@@ -10,12 +10,14 @@ function ProdutoDAO(){
 
 
 function inserirProduto(nomeProd, desc, valor, quantidade, caminho){
-    produtoModel.create({nome : nomeProd, descricao : desc, quantidade: quantidade, caminhoImagem : caminho}, function(erro, succsess){
-        if(erro){
-            throw erro;
-        }
-        console.log(succsess);
-    })
+    return new Promise(function(resolve, reject){
+        produtoModel.create({nome : nomeProd, descricao : desc, quantidade: quantidade, caminhoImagem : caminho}, function(erro, succsess){
+            if(erro){
+                throw erro;
+            }
+            resolve(succsess);
+        })
+    })    
 }
 
 function bucarProduto(){
