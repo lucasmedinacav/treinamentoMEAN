@@ -1,0 +1,41 @@
+<div class="modal-header">
+    <button type="button" (click)="close()" class="close"><span aria-hidden="true">×</span></button>
+    <h4 (click)="opcao=!opcao">Bem vindo!</h4>
+</div>
+<div class="modal-body">
+    <form class="row">
+        <span [hidden]="opcao">
+        <div class="form-group col-sm-10 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="form-control" id="login_email" name="login_email" type="email" placeholder="email" [(ngModel)]="login.email">
+            </div>
+        </div>
+        <div class="form-group col-sm-10 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input class="form-control" id="login_senha" name="login_senha" type="password" placeholder="senha" [(ngModel)]="login.senha">
+            </div>
+            <button type="button" class="btn btn-link">Esqueci minha senha</button>
+        </div>
+        </span>
+        <span [hidden]="!opcao">
+        <div class="form-group col-sm-10 col-sm-offset-1">
+            <label for="login_email">e-mail:</label>
+            <input class="form-control" id="login_email2" name="login_email2" type="email" [(ngModel)]="login.email" autofocus>
+        </div>
+        <div class="form-group col-sm-10 col-sm-offset-1">
+            <label for="login_senha">senha:</label>
+            <input class="form-control" id="login_senha2" name="login_senha2" type="password"  [(ngModel)]="login.senha">
+            <button type="button" class="btn btn-link">Esqueci minha senha</button>
+        </div>
+        </span>
+        <div class="form-group col-sm-10 col-sm-offset-1 checkbox">
+            <label><input class="" id="login_lembra" name="login_lembra" type="checkbox" >Lembrar de mim</label>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" (click)="close()" class="btn btn-default pull-left">cadastrar</button>
+    <button type="button" (click)="close()" class="btn btn-primary ">entrar</button>
+</div>

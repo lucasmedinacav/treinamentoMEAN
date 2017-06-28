@@ -6,15 +6,25 @@ import { AppComponent } from './app.component';
 
 import "../polyfills";
 
+import { ModalModule } from 'angular2-modal';
+import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
+import { LoginModal } from './login-modal/login-modal.component';
+import { FormsModule }   from '@angular/forms';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginModal
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ModalModule.forRoot(),
+    BootstrapModalModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ LoginModal ]
 })
 export class AppModule { }
