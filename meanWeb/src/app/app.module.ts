@@ -5,12 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import "../polyfills";
-import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CadastroProdutoComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
