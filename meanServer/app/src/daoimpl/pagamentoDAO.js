@@ -31,7 +31,7 @@ function buscarPagamento(){
             if(erro){
                 throw erro;
             }
-            resolve(success)
+            resolve(success);
         });
     })
 }
