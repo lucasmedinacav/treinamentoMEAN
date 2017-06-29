@@ -29,14 +29,14 @@ var moip = require("node-moip");
 		                    }
 	                },
 	      FormasPagamento: {
-	          FormaPagamento: ["CartaoCredito","CartaoDebito"], 
+	          FormaPagamento: ["BoletoBancario"], 
 	      },
 	      Pagador:{
 	        Nome: "Carol da Silva",
 	        Email: "ze.silva@email.com",
-	        IdPagador: "ze.silva1",
-            fullname: "Jose Santos",
-            birthdate: "1980-01-02",
+	        //IdPagador: "ze.silva1",
+            //fullname: "Jose Santos",
+            //birthdate: "1980-01-02",
 	        EnderecoCobranca:{
 	        	Numero: "171",
 	        	TelefoneFixo: "(11)3165-4020",
@@ -48,8 +48,8 @@ var moip = require("node-moip");
 	        	Logradouro: "Av. Brigadeiro Faria Lima"
 	        }
 	      },
-	      URLNotificacao: "http://www.seuSite/transactions/notification",
-	      URLRetorno: "http://www.seuSite/transactions",
+	    //URLNotificacao: "http://www.seuSite/transactions/notification",
+        //URLRetorno: "http://www.seuSite/transactions",
 		  }
 		}
 	};
