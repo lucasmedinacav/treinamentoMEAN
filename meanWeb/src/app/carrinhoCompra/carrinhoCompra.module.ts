@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ListaCarrinhoCompraComponent } from './listaCarrinhoCompra.component';
 import { CarrinhoCompraRoutingModule } from './carrinhoCompra-routing.module';
 
+import { CarrinhoServiceModule } from './carrinho.service.module'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { CarrinhoCompraRoutingModule } from './carrinhoCompra-routing.module';
   exports: [
     ListaCarrinhoCompraComponent
   ],
-  providers: [],
+  providers: [
+    CarrinhoServiceModule
+  ],
   bootstrap: [ListaCarrinhoCompraComponent]
 })
 export class CarrinhoCompraModule { }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule }    from '@angular/http';
 
 import { CarrinhoCompraModule } from './carrinhoCompra/carrinhoCompra.module';
 
@@ -16,12 +17,12 @@ import { Http} from '@angular/http';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     AppRoutingModule,
     CarrinhoCompraModule,
     CadastraCartaoModule
   ],
   providers: [
-    Http
   ],
   bootstrap: [AppComponent]
 })
