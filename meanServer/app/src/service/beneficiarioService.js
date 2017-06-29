@@ -1,53 +1,37 @@
 var beneficiarioDao = require('../daoimpl/beneficiarioDAO');
 
 function BeneficiarioService(){
-  
+  this.criarBeneficiario = inserirBeneficiario;
+  this.consultarBeneficiario = buscarBeneficiario;
 }
 
 
-function inserirBeneficiario(nome, idMoipl){
-  return beneficiarioDao.inserirBeneficiario(nome, idMoipl).then(function(retorno){
-      console.log("inserido beneficiario com sucesso");
-  }).promise.catch(err => {
-      console.log("Passou!!!");
-  })
+function inserirBeneficiario(nome, idMoip){ 
+   return new Promise(function(resolve, reject){ 
+
+      beneficiarioDao.inserirBeneficiario(nome, idMoip).then( response => {
+          resolve(response); 
+      }).catch(erro =>{
+          console.log("ERRO GENERICO");
+      }); 
+
+   });
+}
+
+function buscarBeneficiario(){
+   return new Promise(function(resolve, reject){ 
+      
+      beneficiarioDao.buscarBeneficiario().then( response => {
+          resolve(response);
+      }).catch(erro =>{
+          console.log("ERRO GENERICO");
+      });
+
+      
+
+   });
 }
 
 
 
-module.exports = BeneficiarioService();
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-mongoose.connection.on('connected', function () {  
-  console.log('Mongoose default connection open to ' + uri);
-});
-
-mongoose.connection.on('error',function (err) {  
-  console.log('Mongoose default connection error: ' + uri);
-});
-
-mongoose.connection.on('disconnected', function () {  
-  console.log('Mongoose default connection disconnected');
-});
-
-mongoose.connection.on('open', function () {  
-  console.log('Mongoose default connection is open');
-});
+module.exports = new BeneficiarioService();

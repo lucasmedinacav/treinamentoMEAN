@@ -11,7 +11,7 @@ function ProdutoDAO(){
 
 function inserirProduto(nomeProd, desc, valor, quantidade, caminho){
     return new Promise(function(resolve, reject){
-        produtoModel.create({nome : nomeProd, descricao : desc, quantidade: quantidade, caminhoImagem : caminho}, function(erro, succsess){
+        produtoModel.create({nome : nomeProd, descricao : desc, valor : valor, quantidade: quantidade, urlFoto : caminho}, function(erro, succsess){
             if(erro){
                 throw erro;
             }

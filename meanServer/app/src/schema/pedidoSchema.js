@@ -6,11 +6,12 @@ let Schema = mongoose.Schema;
 var pedido = new Schema({    
     status : {type : String, require: true},
     dataPedido : {type : Date},
-    itens : {type : [{ produto : produtoSchema, 
-                quantidade: Number, 
-                valorUnitario : Number, 
-                valorTotal : Number}], 
-                require : true},
+    usuario: {type : String, require: true},
+    itens : {type : [{  produto : produtoSchema, 
+                        quantidade: Number, 
+                        valorUnitario : Number, 
+                        valorTotal : Number}], 
+                        require : true},
     totalPedido : {type : Number , require : true}
 });
 

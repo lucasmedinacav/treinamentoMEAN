@@ -1,23 +1,32 @@
-
-var pedidoDao = require('../daoimpl/pedidoDao');
-
-var mongoose = require('mongoose');
-let uri = 'mongodb://localhost:27017/gojohny';
-
-mongoose.connect(uri);
-
+var pedidoDAO = require('../daoimpl/pedidoDAO');
+ 
 function PedidoService(){
-
+  this.criarPedido = inserirPedido;
+  this.consultarPedido = buscarPedido;
 }
 
-function inserirPedido(statusPram, data, itensPedido, total){
-  return pedidoDao.inserirPedido(statusPram, data, itensPedido, total)
-    .then(function (params) {
-      console.log('deu erro'); 
-    })
-    .catch(function() {
-      console.log('deu erro'); 
-    })
+function inserirPedido(statusPram, data, usuario, itensPedido, total){
+  return new Promise(function(resolve, reject){ 
+
+      pedidoDAO.criarPedido(statusPram, data, usuario, itensPedido, total).then( response => {
+          resolve(response); 
+      }).catch(erro =>{
+          console.log("ERRO GENERICO");
+      }); 
+
+   });
 }
 
-module.exports = PedidoService();
+function buscarPedido(){
+  return new Promise(function(resolve, reject){ 
+
+      pedidoDAO.consultarPedido().then( response => {
+          resolve(response); 
+      }).catch(erro =>{
+          console.log("ERRO GENERICO");
+      }); 
+
+   });
+}
+
+module.exports = new PedidoService();

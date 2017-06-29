@@ -3,20 +3,31 @@ var pagamentoDAO = require('../daoimpl/pagamentoDAO');
 function PagamentoService(){
 }
 
-function inserirPagamento(dataComHora, statusPagamento, tipoPag, vlr, beneficiariosPagamento, quantidade){
-  return pagamentoDAO.inserirBeneficiario(dataComHora, statusPagamento, tipoPag, vlr, beneficiariosPagamento, quantidade).then(function(retorno){]
-                  
-        console.log("Consulta Efetuada");        
-      }).promise.catch(err => {
-        console.log("erro");
-  })
+function inserirPagamento(razaoPagamento ,statusPagamento, tipoPagamento, codigoTransacao, dataHora,
+                             valorTotal, valorTaxa, valorliquido, usuario, beneficiarios, pedido){
+  return new Promise(function(resolve, reject){ 
+
+      pagamentoDAO.inserirPagamento(razaoPagamento ,statusPagamento, tipoPagamento, codigoTransacao, dataHora,
+                             valorTotal, valorTaxa, valorliquido, usuario, beneficiarios, pedido).then( response => {
+          resolve(response); 
+      }).catch(erro =>{
+          console.log("ERRO GENERICO");
+      }); 
+
+   });
 }
 
 
 function buscaPagamento(){
-    return pagamentoDAO.buscarPagamento().then(function(retorno){
-        console.log("consulta efetuada com sucesso");
-     }).catch();
+    return new Promise(function(resolve, reject){ 
+
+      pagamentoDAO.buscarPagamento().then( response => {
+          resolve(response); 
+      }).catch(erro =>{
+          console.log("ERRO GENERICO");
+      }); 
+
+   });
 }
 
 

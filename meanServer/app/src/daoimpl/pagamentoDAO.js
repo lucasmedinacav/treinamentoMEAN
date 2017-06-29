@@ -4,14 +4,19 @@ let pagamentoSchema = require('../schema/pagamentoSchema')
 let model = mongoose.model("pagamento", pagamentoSchema);
 
 function Pagamento(){
-    this.inserirPagamentoPedido = inserirPagamentoPedido;
+    this.inserirPagamento = inserirPagamento;
     this.buscarPagamento = buscarPagamento;
 }
 
 
-function inserirPagamento(dataComHora, statusPagamento, tipoPag, vlr, beneficiariosPagamento, quantidade){
-    return new Promisse(function(resolve,reject){
-        model.create({dataHora : dataComHora, status : statusPagamento, tipoPagamento: tppag, valor : vlr, beneficiarios : beneficiariosPagamento, pedido: pedido}, function(erro, succsess){
+function inserirPagamento(razaoPagamento ,statusPagamento, tipoPagamento, codigoTransacao, dataHora,
+                             valorTotal, valorTaxa, valorliquido, usuario, beneficiarios, pedido){
+
+    return new Promise(function(resolve,reject){
+        model.create({  razaoPagamento: razaoPagamento,statusPagamento : statusPagamento, tipoPagamento : tipoPagamento, 
+                        codigoTransacao : codigoTransacao, dataHora : dataHora, valorTotal : valorTotal, valorTaxa : 
+                        valorTaxa, valorliquido : valorliquido,usuario : usuario, beneficiarios : beneficiarios, pedido: pedido}, 
+                        function(erro, succsess){
             if(erro){
                 throw erro;
             }
@@ -21,7 +26,7 @@ function inserirPagamento(dataComHora, statusPagamento, tipoPag, vlr, beneficiar
 }
 
 function buscarPagamento(){
-    return new Promisse(function(resolve, reject){
+    return new Promise(function(resolve, reject){
         model.find(function(erro, success){
             if(erro){
                 throw erro;
