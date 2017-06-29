@@ -1,3 +1,42 @@
-<p>
-  register works!
-</p>
+<section class="container main">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <form class="row mw-register-space-top-32">
+
+        <div class="form-group col-xs-6">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" id="nome_usuario" name="nome_usuario" type="text" placeholder="Nome" [(ngModel)]="usuario.nome">
+          </div>
+        </div>
+
+        <div class="form-group col-xs-6">
+            <input class="form-control" id="sobrenome_usuario" name="sobrenome_usuario" type="text" placeholder="Sobrenome" [(ngModel)]="usuario.sobrenome">
+        </div>
+
+        <div class="form-group col-xs-12">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input class="form-control" id="email_usuario" name="email_usuario" type="mail" placeholder="Email" [(ngModel)]="usuario.email">
+          </div>
+        </div>
+
+        <div class="form-group col-xs-6">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" id="senha_usuario" name="senha_usuario" type="password" placeholder="Senha" [(ngModel)]="usuario.senha">
+          </div>
+        </div>
+
+        <div class="form-group col-xs-6">
+            <input class="form-control" id="senha_confirmacao" name="senha_confirmacao" type="password" placeholder="Confirme a senha" [(ngModel)]="senhaConfirmacao">
+        </div>
+
+        <div class="form-group col-xs-12">
+          <span class="mw-register-space-left-8">Já tem seu cadastro? <a href="javascript:void(0)" (click)="openLoginModal()">Faça o login.</a></span>
+          <button class="btn btn-primary pull-right" type="submit" (click)="cadastrar()">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
