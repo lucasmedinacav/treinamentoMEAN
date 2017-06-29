@@ -9,10 +9,9 @@ function inserirBeneficiario(nome, idMoipl){
   return beneficiarioDao.inserirBeneficiario(nome, idMoipl).then(function(retorno){
       console.log("inserido beneficiario com sucesso");
   }).promise.catch(err => {
-      console.log("Passou!!!");
+      console.log("erro no beneficiario");
   })
 }
-
 
 
 module.exports = BeneficiarioService();

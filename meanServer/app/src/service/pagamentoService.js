@@ -16,9 +16,10 @@ function inserirPagamento(dataComHora, statusPagamento, tipoPag, vlr, beneficiar
 function buscaPagamento(){
     return pagamentoDAO.buscarPagamento().then(function(retorno){
         console.log("consulta efetuada com sucesso");
-     }).catch();
+     }).promise.catch(err =>{
+       console.log("erro");
+     });
 }
-
 
 
 module.exports = PagamentoService();

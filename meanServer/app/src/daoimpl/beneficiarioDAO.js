@@ -9,7 +9,7 @@ function BeneficiarioDAO(){
 }
 
 function inserirBeneficiario(nome, idMoipl){
-    return new Promisse(function(resolve, reject){
+    return new Promise(function(resolve, reject){
         beneficiarioModel.create({nome : nome, idMoipl : idMoipl},function(erro, succsess){
             if(erro){
                 throw erro;
@@ -20,12 +20,14 @@ function inserirBeneficiario(nome, idMoipl){
 }
 
 function buscarBeneficiario(){
-    beneficiarioModel.find(function(erro, succsess){
-        if(erro){
-            throw erro;
-        }
-        resolve(success);
-    });
+    return new Promise(function(resolve,reject){
+        beneficiarioModel.find(function(erro, succsess){
+            if(erro){
+                throw erro;
+            }
+            resolve(success);
+        }); 
+    })
 }
 
 module.exports = new BeneficiarioDAO();

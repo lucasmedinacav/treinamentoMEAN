@@ -10,7 +10,7 @@ function Pagamento(){
 
 
 function inserirPagamento(dataComHora, statusPagamento, tipoPag, vlr, beneficiariosPagamento, quantidade){
-    return new Promisse(function(resolve,reject){
+    return new Promise(function(resolve,reject){
         model.create({dataHora : dataComHora, status : statusPagamento, tipoPagamento: tppag, valor : vlr, beneficiarios : beneficiariosPagamento, pedido: pedido}, function(erro, succsess){
             if(erro){
                 throw erro;
@@ -21,12 +21,12 @@ function inserirPagamento(dataComHora, statusPagamento, tipoPag, vlr, beneficiar
 }
 
 function buscarPagamento(){
-    return new Promisse(function(resolve, reject){
+    return new Promise(function(resolve, reject){
         model.find(function(erro, success){
             if(erro){
                 throw erro;
             }
-            resolve(success)
+            resolve(success);
         });
     })
 }

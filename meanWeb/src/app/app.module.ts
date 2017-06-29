@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { CarrinhoCompraModule } from './carrinhoCompra/carrinhoCompra.module';
 
+import { CadastraCartaoModule } from './cartoes/cadastraCartao.module';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -15,7 +17,8 @@ import "../polyfills";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CarrinhoCompraModule
+    CarrinhoCompraModule,
+    CadastraCartaoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
