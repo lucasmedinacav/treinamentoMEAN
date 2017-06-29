@@ -10,11 +10,15 @@ import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { LoginModal } from './login-modal/login-modal.component';
 import { FormsModule }   from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginModal
+    LoginModal,
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
