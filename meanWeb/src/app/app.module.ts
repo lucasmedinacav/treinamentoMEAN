@@ -3,18 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CadastroProdutoModule } from './cadastro-produto/cadastro-produto.module';
+import { HomeModule } from "./home/home.module";
 
 import "../polyfills";
-import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastroProdutoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CadastroProdutoModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
