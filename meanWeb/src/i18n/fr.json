@@ -1,6 +1,12 @@
 {
   "HOME": {
     "TITLE": "Bonjour Angular 2 avec ng2-translate !",
-    "SELECT": "Changer la langue"
+    "SELECT": " Changer la langue",
+     "Products": " Des produits",
+    "Categories": " Catégories",
+    "Search": " Recherche",
+    "Your_shoppings": " Vos Achats",
+    "Sign_up": " Inscriptions",
+    "Login" : " S'identifier"
   }
 }
