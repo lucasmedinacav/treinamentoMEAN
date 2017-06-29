@@ -12,13 +12,17 @@ import { LoginModal } from './login-modal/login-modal.component';
 import { FormsModule }   from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginModal,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, HeaderComponent, FooterComponent],
   entryComponents: [ LoginModal ]
 })
 export class AppModule { }
