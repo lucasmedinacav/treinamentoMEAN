@@ -16,8 +16,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {}
 
  openLoginModal() {
-   console.log('oeoe');
-   
     return this.modal.open(LoginModal, overlayConfigFactory({}, BSModalContext));
   }
 
