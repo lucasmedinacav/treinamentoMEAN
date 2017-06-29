@@ -1,36 +1,69 @@
-<div class="container">  
-  <div class="panel-group">
-    <div class="panel panel-default">      
-      <div class="panel-body">
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Produto(s)</th>
-                <th></th>
-                <th>Quantidade</th>
-                <th>Valor Unitàrio</th>
-                <th>Valor Total</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><img src="https://a-static.mlcdn.com.br/1500x1500/tv-led-42-aoc-full-hd-le42m1475-conversor-digital-3-hdmi-1-usb/magazineluiza/193399400/1a19406dae67a689d0679067646c3d73.jpg" class="img-rounded" alt="TV 42" width="100" height="100"></td>
-                <td align="left">TV 42 Samsung</td>
-                <td><input id="movie" max="100" min="0" type="number" value="0"/></td>
-                <td>R$100,00</td>
-                <td>R$100,00</td>
-            </tr>
-            <tr>
-                <td><img src="http://thumbs.buscape.com.br/__PUr-f0d4_2.jpg" class="img-rounded" alt="TV 42" width="100" height="100"></td>
-                <td align="left">Bicicleta Caloi 21</td>
-                <td><input id="movie" max="100" min="0" type="number" value="0"/></td>
-                <td>R$250,00</td>
-                <td>R$250,00</td>
-            </tr>      
-            </tbody>
-        </table>        
-      </div>
-    </div>    
-  </div>
-  <a routerLink="/preenchimentoCartao"  class="btn btn-success">Comprar</a>  
+<div class="container">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Produto(s)</th>
+                            <th></th>
+                            <th>Quantidade</th>
+                            <th>Valor Unitàrio</th>
+                            <th>Valor Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="https://a-static.mlcdn.com.br/1500x1500/tv-led-42-aoc-full-hd-le42m1475-conversor-digital-3-hdmi-1-usb/magazineluiza/193399400/1a19406dae67a689d0679067646c3d73.jpg"
+                                    class="img-rounded" alt="TV 42" width="100" height="100"></td>
+                            <td align="left">TV 42 Samsung</td>
+                            <td><input id="movie" max="100" min="0" type="number" value="0" /></td>
+                            <td>R$100,00</td>
+                            <td>R$100,00</td>
+                        </tr>
+                        <tr>
+                            <td><img src="http://thumbs.buscape.com.br/__PUr-f0d4_2.jpg" class="img-rounded" alt="TV 42" width="100"
+                                    height="100"></td>
+                            <td align="left">Bicicleta Caloi 21</td>
+                            <td><input id="movie" max="100" min="0" type="number" value="0" /></td>
+                            <td>R$250,00</td>
+                            <td>R$250,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" style="float:left">
+        <a routerLink="/preenchimentoCartao" class="btn btn-info">Escolher + Produtos</a>
+    </div>
+        <div style="float:right" class="jumbotron col-md-4">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="text-capitalize col-xs-8">1 produto:</td>
+                        <td class="text-uppercase">R$</td>
+                        <td id="basket-summary-subtotal" class="text-right col-xs-4">166,90</td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize col-xs-8">Frete (?):</td>
+                        <td></td>
+                        <td class="text-right col-xs-4" colspan="2">-</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="table-divisor">
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr class="text-primary summary-total">
+                        <td class="text-capitalize col-xs-8">Total:</td>
+                        <td class="text-uppercase">R$</td>
+                        <td class="text-uppercase text-right col-xs-4" id="total-amount">166,90</td>
+                    </tr>
+                </tfoot>
+            </table><br /><br />
+            <div style="float: right">
+                <a routerLink="/preenchimentoCartao" class="btn btn-success">Comprar</a>
+            </div>
+        </div>
 </div>
