@@ -5,7 +5,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 // The app module
 import { AppModule } from './app/app.module';
-
+import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';
 
 if (environment.production) {
