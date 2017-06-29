@@ -1,17 +1,15 @@
 var express = require('express'); //Importando o modulo do express para trabalhar com rotas
 var rotas = express.Router(); //Obtendo objeto de rotas do express
 
-let produtoService = require('../../app/src/service/produtoService');
+let moipService = require('../../app/src/service/moip/moipService');
 
-rotas.get('/buscar', function(request, response){
-    produtoService.consultarProduto().then(function(resultado){
-        response.json(resultado);
-    });
+rotas.get('/obterordempagamento', function(request, response){ 
+    moipService.obterOrdemPagamento().then(function(resultado){
+        response.end(resultado);
+    })
 });
 
-rotas.post('/incluir', function(request, response){
-    console.log('Rota de inclusao Produto');
-    response.end();
+rotas.post('/efetivarpagamento', function(request, response){ 
 });
 
 
