@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   moduleId: module.id,
@@ -6,6 +7,5 @@ import { Component } from '@angular/core';
   templateUrl: 'listaCarrinhoCompra.component.html',
   
 })
-export class ListaCarrinhoCompraComponent {
-  
+export class ListaCarrinhoCompraComponent {  
 }

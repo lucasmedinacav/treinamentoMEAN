@@ -6,7 +6,6 @@ import { ListaCarrinhoCompraComponent } from './listaCarrinhoCompra.component';
 import { CarrinhoCompraRoutingModule } from './carrinhoCompra-routing.module';
 
 
-
 @NgModule({
   declarations: [
     ListaCarrinhoCompraComponent

@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import "../polyfills";
-
+import { Http} from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +20,9 @@ import "../polyfills";
     CarrinhoCompraModule,
     CadastraCartaoModule
   ],
-  providers: [],
+  providers: [
+    Http
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

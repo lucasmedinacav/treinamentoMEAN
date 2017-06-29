@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common'
 
 @Component({
   moduleId: module.id,
@@ -7,5 +8,12 @@ import { Component } from '@angular/core';
   
 })
 export class CadastraCartaoComponent {
-  
+   constructor(
+      private location : Location
+    ){}
+
+
+    voltarParaListaProdutos() : void {
+      this.location.back();
+    }
 }

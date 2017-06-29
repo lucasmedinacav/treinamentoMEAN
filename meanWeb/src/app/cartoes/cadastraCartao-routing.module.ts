@@ -5,7 +5,7 @@ import { CadastraCartaoComponent } from './cadastraCartao.component';
 
 const routes: Routes = [
   {
-    path: 'cadastroCartao',
+    path: 'preenchimentoCartao',
     component: CadastraCartaoComponent
   }
 ];
