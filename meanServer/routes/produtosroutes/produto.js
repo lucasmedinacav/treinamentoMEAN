@@ -8,18 +8,13 @@ rotas.get('/teste', function(request, response){
 });
 
 rotas.post('/inserirProduto', function(req, res){
-    console.log('body = ' + req.body.nomeProd);
-    console.log('body = ' + req.body.desc);
-    console.log('body = ' + req.body.valor);
-    console.log('body = ' + req.body.quantidade);
-    console.log('body = ' + req.body.caminho);
-    var nomeProd = req.body.nomeProd;
-    var desc = req.body.desc;
-    var valor = req.body.valor;
-    var quantidade = req.body.quantidade;
-    var caminho = req.body.caminho;
-
-     console.log(nomeProd);
+    console.log('body = ' + req.body);
+    var produto = req.body;
+    var nomeProd = produto.nomeProd;
+    var desc =  produto.desc;
+    var valor =  produto.valor;
+    var quantidade =  produto.quantidade;
+    var caminho =  produto.caminho;
 
     produtoService.inserirProduto(nomeProd, desc, valor, quantidade, caminho, function (resp) {
         res.json(resp);
