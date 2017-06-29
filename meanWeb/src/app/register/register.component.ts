@@ -12,4 +12,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+  cadastrar(): void {
+    console.log('cadastrado');
+  }
+
 }

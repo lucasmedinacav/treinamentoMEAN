@@ -1,3 +1,49 @@
-<p>
-  register works!
-</p>
+<section class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1>Cadastro</h1>
+      <form class="row">
+
+        <div class="form-group col-xs-12">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" id="nome" type="text" value="" placeholder="Nome">
+          </div>
+        </div>
+
+        <div class="form-group col-xs-12">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" id="sobrenome" type="text" value="" placeholder="Sobrenome">
+          </div>
+        </div>
+
+        <div class="form-group col-xs-12">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input class="form-control" id="email" type="mail" value="" placeholder="Email">
+          </div>
+        </div>
+
+        <div class="form-group col-xs-12">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" id="senha" type="password" value="" placeholder="Senha">
+          </div>
+        </div>
+
+        <div class="form-group col-xs-12">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" id="senhaConfirmacao" type="password" value="" placeholder="Digite a senha novamente">
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <button class="btn btn-primary" type="submit" (click)="cadastrar()">Cadastrar</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
