@@ -6,7 +6,6 @@ import { Usuario } from './../register/user.object';
 export class LoginModalContext extends BSModalContext { }
 
 @Component({
-  selector: 'modal-content',
   styles: [],
   styleUrls: ['login-modal.component.css'],
   templateUrl: 'login-modal.component.html'

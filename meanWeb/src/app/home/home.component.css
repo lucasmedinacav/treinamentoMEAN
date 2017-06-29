@@ -10,10 +10,6 @@
 
 .main{
     margin-right:50px;
-}
-
-.main,
-.footer {
     margin-top: 70px
 }
 
@@ -39,8 +35,4 @@
 .thumbnail .caption-full {
     padding: 9px;
     color: #333;
-}
-
-footer {
-    margin: 50px 0;
 }
