@@ -37,10 +37,12 @@ mongoose.connect(uri);
 // });
 // });
 
-pedidoService.consultarPedido().then(info => {
-    console.log(info);
+// pedidoService.consultarPedido().then(info => {
+//     console.log(info);
 
 
-});
+// });
+
+
 
  
