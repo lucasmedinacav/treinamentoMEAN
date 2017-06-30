@@ -3,6 +3,16 @@ var app = express(); //Obtem o 'objeto' express que sera usado para configurar a
 
 var bodyParser = require('body-parser');
 
+var allowCors = function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Credentials', 'true');    
+    next();
+} 
+
+app.use(allowCors); 
+
 var loginRota = require('./routes/loginroutes/login');
 var produtoRota = require('./routes/produtosroutes/produto');
 var carrinhoComprasRota = require('./routes/carrinhoroutes/carrinho');
@@ -16,8 +26,6 @@ app.use(bodyParser.urlencoded({
 app.use("/login", loginRota);
 app.use("/produto", produtoRota);
 app.use("/carrinho", carrinhoComprasRota);
-
-
 
 
 app.listen(3002, function(){

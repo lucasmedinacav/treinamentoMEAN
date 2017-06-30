@@ -1,41 +1,71 @@
 <h1> CADASTRO DE PRODUTOS </h1>
 <HR/>
-<form name="formProduto" (ng-submit)="insertProduto()" class="form-horizontal"> 
+<form [formGroup]="formProduto" (submit)="insertProduto($event)" class="form-horizontal"> 
     <fieldset class="form-group">
     <div class="form-group" class="col-sm-4">
         <div>
             <label for="nomeProduto">Produto:</label>
         </div>
         <div>
-            <input type="text" name="nomeProduto" ng-model="produto.nomeProd" class="form-control" required/>
+            <input type="text" 
+                  id="nomeProd" 
+                  name="nomeProd"
+                  [(ngModel)]="produto.nomeProd" 
+                  class="form-control" 
+                  formControlName="nomeProd"
+                  />
         </div>
         <BR/>
         <div>
             <label for="descricao">Descrição:</label>
         </div>
         <div>
-            <input type="text" name="descricao" ng-model="produto.desc" class="form-control"/>
+            <input type="text" 
+                  id="desc" 
+                  name="desc"
+                  [(ngModel)]="produto.desc" 
+                  class="form-control" 
+                  formControlName="desc"
+                  />
         </div>
         <BR/>
         <div>
             <label for="valor">Valor: </label>
         </div>
         <div>
-            <input type="text" name="valor" ng-model="produto.valor" class="form-control"/>
+            <input type="text" 
+                  id="valor" 
+                  name="valor"
+                  [(ngModel)]="produto.valor" 
+                  class="form-control" 
+                  formControlName="valor"
+                  />
         </div>
         <BR/>
         <div>
             <label for="quantidade">Quantidade: </label>
         </div>
         <div>
-            <input type="text" name="quantidade" ng-model="produto.quantidade" class="form-control"/>
+            <input type="text" 
+                  id="quantidade" 
+                  name="quantidade"
+                  [(ngModel)]="produto.quantidade" 
+                  class="form-control" 
+                  formControlName="quantidade"
+                  />
         </div>
         <BR/>
         <div>
             <label for="urlFoto">urlFoto: </label>
         </div>
         <div>
-            <input type="text" name="urlFoto" ng-model="produto.caminho" class="form-control"/>
+            <input type="text" 
+                  id="caminho" 
+                  name="caminho"
+                  [(ngModel)]="produto.caminho" 
+                  class="form-control" 
+                  formControlName="caminho"
+                  />
         </div>
         <BR/>
         <button type="submit" class="btn btn-primary">Cadastrar</button>

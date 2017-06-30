@@ -6,12 +6,14 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class CadastroProdutoService {
-    private _cadastroUrl = 'http://127.0.0.1:3200/produto/';
+    private _cadastroUrl = 'http://127.0.0.1:3002/produto/inserirProduto';
 
     constructor(private _http: Http) { }
 
     insertProduto(produto: Produto) {
+        console.log("inicio do metodo");
         var headers = new Headers();
+        console.log(produto);
         headers.append("Content-Type", "aplication/json");
         return this._http.post(this._cadastroUrl, JSON.stringify(produto), { headers: headers })
             .subscribe(() => {

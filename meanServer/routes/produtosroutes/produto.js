@@ -8,7 +8,7 @@ rotas.get('/teste', function(request, response){
 });
 
 rotas.post('/inserirProduto', function(req, res){
-    console.log('body = ' + req.body);
+    console.log('body = ' + req.body.nomeProd);
     var produto = req.body;
     var nomeProd = produto.nomeProd;
     var desc =  produto.desc;
