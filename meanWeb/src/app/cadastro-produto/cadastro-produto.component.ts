@@ -16,11 +16,11 @@ export class CadastroProdutoComponent implements OnInit {
 
   constructor(private _produtoService: CadastroProdutoService, private fb: FormBuilder) {
     this.formProduto = fb.group ({
-      nomeProd: ['', Validators.required],
-      desc: ['', Validators.required],
+      nome: ['', Validators.required],
+      descricao: ['', Validators.required],
       valor: ['', Validators.required],
       quantidade: ['', Validators.required],
-      caminho: ['', Validators.required]
+      urlFoto: ['', Validators.required]
     });
    }
 

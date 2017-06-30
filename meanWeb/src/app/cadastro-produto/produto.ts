@@ -1,7 +1,7 @@
 export class Produto {
-  nomeProd: number;
-  desc: string;
+  nome: number;
+  descricao: string;
   valor: number
   quantidade: number;
-  caminho: string;
+  urlFoto: string;
 }

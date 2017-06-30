@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Produto } from '../cadastro-produto/produto';
+import { CadastroProdutoService } from '../cadastro-produto/cadastro-produto.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  produtos: Produto [];
+  errorMessage: string;
+
+  constructor(private cadastroProdutoService: CadastroProdutoService) { }
 
   ngOnInit() {
+    this.cadastroProdutoService.listaProdutos().subscribe(produtos => {
+      this.produtos = produtos,
+      erro => this.errorMessage = <any> erro
+    });
   }
 
 }

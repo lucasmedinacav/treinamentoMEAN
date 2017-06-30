@@ -22,11 +22,11 @@ rotas.get('/buscarProduto/:id', function(request, response){
 rotas.post('/inserirProduto', function(req, res){
     console.log('body = ' + req.body.nomeProd);
     var produto = req.body;
-    var nomeProd = produto.nomeProd;
-    var desc =  produto.desc;
+    var nomeProd = produto.nome;
+    var desc =  produto.descricao;
     var valor =  produto.valor;
     var quantidade =  produto.quantidade;
-    var caminho =  produto.caminho;
+    var caminho =  produto.urlFoto;
 
     produtoService.inserirProduto(nomeProd, desc, valor, quantidade, caminho, function (resp) {
         res.json(resp);

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { CadastroProdutoModule } from './cadastro-produto/cadastro-produto.module';
 import { HomeModule } from "./home/home.module";
 
+import 'rxjs/add/operator/map';
+
 import "../polyfills";
 
 @NgModule({

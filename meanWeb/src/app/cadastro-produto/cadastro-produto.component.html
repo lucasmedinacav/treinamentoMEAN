@@ -4,15 +4,15 @@
     <fieldset class="form-group">
     <div class="form-group" class="col-sm-4">
         <div>
-            <label for="nomeProduto">Produto:</label>
+            <label for="nome">Produto:</label>
         </div>
         <div>
             <input type="text" 
-                  id="nomeProd" 
-                  name="nomeProd"
-                  [(ngModel)]="produto.nomeProd" 
+                  id="nome" 
+                  name="nome"
+                  [(ngModel)]="produto.nome" 
                   class="form-control" 
-                  formControlName="nomeProd"
+                  formControlName="nome"
                   />
         </div>
         <BR/>
@@ -21,11 +21,11 @@
         </div>
         <div>
             <input type="text" 
-                  id="desc" 
-                  name="desc"
-                  [(ngModel)]="produto.desc" 
+                  id="descricao" 
+                  name="descricao"
+                  [(ngModel)]="produto.descricao" 
                   class="form-control" 
-                  formControlName="desc"
+                  formControlName="descricao"
                   />
         </div>
         <BR/>
@@ -60,11 +60,11 @@
         </div>
         <div>
             <input type="text" 
-                  id="caminho" 
-                  name="caminho"
-                  [(ngModel)]="produto.caminho" 
+                  id="urlFoto" 
+                  name="urlFoto"
+                  [(ngModel)]="produto.urlFoto" 
                   class="form-control" 
-                  formControlName="caminho"
+                  formControlName="urlFoto"
                   />
         </div>
         <BR/>
