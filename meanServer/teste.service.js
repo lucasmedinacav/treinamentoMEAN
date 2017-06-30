@@ -8,9 +8,9 @@ let uri = 'mongodb://localhost:27017/mock';
 mongoose.connect(uri);
 
 
-// benService.criarBeneficiario("Sr. Weverton", "leo.weverton_moip").then(info => {
-//     console.log(info);
-// });
+ benService.criarBeneficiario("Sr. Weverton", "leo.weverton_moip").then(info => {
+     console.log(info);
+ });
 
 // benService.consultarBeneficiario().then(info => {
 //     console.log(info);

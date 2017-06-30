@@ -7,7 +7,7 @@ mongoose.connect(uri);
 
 
 app.use(function (req, res, next) {
-    concole.log("GO")
+    console.log("GO")
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
@@ -19,9 +19,13 @@ var loginRota = require('./routes/loginroutes/login');
 var produtoRota = require('./routes/produtosroutes/produto'); 
 var moipRota = require('./routes/moiproutes/moip'); 
 
+var beneficiarioRota = require('./routes/beneficiarioroutes/beneficiario'); 
+
 app.use("/login", loginRota); 
 app.use("/produto", produtoRota); 
 app.use("/moip", moipRota);
+app.use("/beneficiario", beneficiarioRota);
+
 app.use("/", function(request, response){
     response.end("Rota invalida");
 });  

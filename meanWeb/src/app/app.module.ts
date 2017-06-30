@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule }    from '@angular/http';
+import { HttpModule } from '@angular/http';
+import { Http } from '@angular/http';
 
 import { CarrinhoCompraModule } from './carrinhoCompra/carrinhoCompra.module';
 
@@ -14,7 +15,7 @@ import "../polyfills";
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { LoginModal } from './login-modal/login-modal.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
@@ -34,10 +35,11 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule,
     ModalModule.forRoot(),
     BootstrapModalModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent, HeaderComponent, FooterComponent],
-  entryComponents: [ LoginModal ]
+  entryComponents: [LoginModal]
 })
 export class AppModule { }
