@@ -1,56 +1,11 @@
-.carousel-inner>.item>img,
-.carousel-inner>.item>a>img {
-    width: 70%;
-    margin: auto;
-}
-
-.carousel-main{
-    margin-bottom:30px;
-}
-
-.main{
-    margin-right:50px;
-}
-
 .main,
 .footer {
     margin-top: 70px
 }
 
-.caption h4 {
-    white-space: nowrap;
+.main {
+    margin-top: 70px;
+    min-height: 400px;
 }
 
-.thumbnail img {
-    width: 100%;
-}
 
-.ratings {
-    padding-right: 10px;
-    padding-left: 10px;
-    color: #d17581;
-}
-
-.thumbnail {
-    padding: 0;
-    margin-bottom: 20px;
-}
-
-.thumbnail .caption-full {
-    padding: 9px;
-    color: #333;
-}
-
-footer {
-    margin: 50px 0;
-}
-
-.maoClick { 
-    cursor: pointer;
-    margin-left:5px;
-}   
-
-.bandeiras{
-    display: inline-block;
-    margin-top: 10px;
-}
