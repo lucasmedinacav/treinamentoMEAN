@@ -7,6 +7,26 @@ exports.inserirProduto = function (nomeProd, desc, valor, quantidade, caminho, c
   return produtoDao.inserirProduto(nomeProd, desc, valor, quantidade, caminho, callback);
 }
 
+exports.buscarProdutos = function () {
+  return new Promise(function (resolve, reject) {
+      produtoDao.buscarProdutos().then( response => {
+        resolve(response);
+      }).catch(erro => {
+        console.log('erro na buscar de produtos.')
+      });
+  });
+}
+
+exports.buscarProdutoByID = function (id) {
+  return new Promise(function (resolve, reject) {
+      produtoDao.buscarProdutoByID(id).then( response => {
+        resolve(response);
+      }).catch(erro => {
+        console.log('erro na buscar de produto.')
+      });
+  });
+}
+
 mongoose.connection.on('connected', function () {  
   console.log('Mongoose default connection open to ' + uri);
 });
