@@ -11,13 +11,8 @@ var moip = require("node-moip");
             // Comissionamento: [
             //                     {
             //                         Razao: "Motivo da comissão",
-            //                         Comissionado: { LoginMoIP: "ze.silva1" },
+            //                         Comissionado: { LoginMoIP: "i-abreu@hotmail.com" },
             //                         ValorFixo: "30"
-            //                     },
-            //                     {
-            //                         Razao: "Motivo da comissão",
-            //                         Comissionado: { LoginMoIP: "leow_g.1" },
-            //                         ValorFixo: "70"
             //                     }
             //                 ]
             //             },
@@ -63,8 +58,9 @@ function MoipService(){
 
 function obterOrdemPagamento(){
    return new Promise(function(resolve, reject){
-       var Moip = new moip.Moip(); 
+        var Moip = new moip.Moip(); 
         Moip.send(payment, function(response){ 
+		console.log(JSON.stringify(response));
         resolve(JSON.stringify(response));
         })  
    });   

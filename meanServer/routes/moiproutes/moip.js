@@ -5,7 +5,7 @@ let moipService = require('../../app/src/service/moip/moipService');
 
 rotas.get('/obterordempagamento', function(request, response){ 
     moipService.obterOrdemPagamento().then(function(resultado){
-        response.end(resultado);
+        response.json(resultado);
     })
 });
 
