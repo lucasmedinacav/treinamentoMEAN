@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   public senhaConfirmacao: string;
   public data: any;
 
-  constructor(private http_: Http, public modal: Modal) {
+  constructor(private http: Http, public modal: Modal) {
     this.usuario = new Usuario;
   }
 
@@ -27,12 +27,10 @@ export class RegisterComponent implements OnInit {
     console.log('cadastrado');
     let headers = new Headers({ 'contentType': 'application/json' });
     let options = new RequestOptions({ 'headers': headers });
+    let uriUsuario = 'http://localhost:3002/cadastrapessoa';
 
 
-    this.http_.get('').map((res: Response) => res.json()).subscribe(data => {
-      this.data = data;
-      console.log(this.data);
-    });
+    this.http.post(uriUsuario, options);
   }
 
   openLoginModal() {
