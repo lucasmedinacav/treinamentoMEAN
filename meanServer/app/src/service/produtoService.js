@@ -1,22 +1,33 @@
-var produtoDao = require('../daoimpl/produtoDAO');
-var mongoose = require('mongoose');
-let uri = 'mongodb://localhost:27017/mean';
-mongoose.connect(uri);
-produtoDao.inserirProduto('testeNome', 'testeDescricao', 50.00, 4, 'testeCaminho');
+var produtoDAO = require('../daoimpl/produtoDAO');
+
+function ProdutoService(){
+  this.criarProduto = inserirProduto;
+  this.consultarProduto = buscarProduto;
+}
 
 
-mongoose.connection.on('connected', function () {  
-  console.log('Mongoose default connection open to ' + uri);
-});
+function inserirProduto(nomeProduto, descricaoProduto, valorProduto, quantidadeProduto, caminhoFoto){ 
+   return new Promise(function(resolve, reject){ 
 
-mongoose.connection.on('error',function (err) {  
-  console.log('Mongoose default connection error: ' + uri);
-});
+      produtoDAO.inserirProduto(nomeProduto, descricaoProduto, valorProduto, quantidadeProduto, caminhoFoto).then( response => {
+          resolve(response); 
+      }).catch(erro =>{
+          console.log("ERRO GENERICO");
+      }); 
 
-mongoose.connection.on('disconnected', function () {  
-  console.log('Mongoose default connection disconnected');
-});
+   });
+}
 
-mongoose.connection.on('open', function () {  
-  console.log('Mongoose default connection is open');
-});
+function buscarProduto(){ 
+   return new Promise(function(resolve, reject){ 
+
+      produtoDAO.bucarProduto().then( response => {
+          resolve(response); 
+      }).catch(erro =>{
+          console.log("ERRO GENERICO");
+      }); 
+
+   });
+}
+
+module.exports = new ProdutoService();
