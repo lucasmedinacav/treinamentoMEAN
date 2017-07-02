@@ -4,7 +4,7 @@ let pedidoService = require("./app/src/service/pedidoService");
 // let pagamentoService = require("./app/src/service/pagamentoService");
 
 var mongoose = require('mongoose');
-let uri = 'mongodb://localhost:27017/mock';
+let uri = 'mongodb://localhost:27017/mock2';
 mongoose.connect(uri);
 
 
@@ -16,7 +16,7 @@ mongoose.connect(uri);
 //     console.log(info);
 // });
 
-//produtoService.criarProduto("TV", "TV de tela plana", 200.00, 20, "/teste/teste").then(resultado => console.log(resultado));
+//produtoService.criarProduto("Bicicleta", "Bicicleta Caloi", 130.00, 3, "http://thumbs.buscape.com.br/__PUr-f0d4_2.jpg").then(resultado => console.log(resultado));
 // produtoService.consultarProduto().then(resultado=> {
 //     var produto = resultado[0];
 //     var itens = [
