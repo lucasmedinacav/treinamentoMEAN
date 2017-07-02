@@ -2,15 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule }    from '@angular/http';
 
+import { FormsModule } from '@angular/forms';
+
 import { CarrinhoCompraModule } from './carrinhoCompra/carrinhoCompra.module';
-
 import { CadastraCartaoModule } from './cartoes/cadastraCartao.module';
-
+import { ProdutosModule } from './produtos/produtos.module'
+import { Http} from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import "../polyfills";
-import { Http} from '@angular/http';
+
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +24,8 @@ import { Http} from '@angular/http';
     HttpModule,
     AppRoutingModule,
     CarrinhoCompraModule,
-    CadastraCartaoModule
+    CadastraCartaoModule,
+    ProdutosModule,
   ],
   providers: [
   ],

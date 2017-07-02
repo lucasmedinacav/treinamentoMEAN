@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -32,7 +32,8 @@
                 <button type="submit" class="btn btn-default">Buscar</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a [routerLink]="['/carrinhoCompra']"><span class="glyphicon glyphicon-shopping-cart"></span>  Suas Compras</a></li>
+                <li><a [routerLink]="['/carrinhoCompra']"><span class="glyphicon glyphicon-folder-close"></span>  Seus Pedidos</a></li>
+                <li><a [routerLink]="['/carrinhoCompra']"><span class="glyphicon glyphicon-shopping-cart"></span>  Seu Carrinho</a></li>
                 <li><a [routerLink]="['/cadastroCartao']"><span class="glyphicon glyphicon-user"></span>  Cadastre-se</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li>
             </ul>
@@ -57,164 +58,13 @@
         </div>
 
         <div class="col-md-9">
-
-            <div id="myCarousel" class="carousel slide carousel-main" data-ride="carousel" data-interval="2000">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                    <li data-target="#myCarousel" data-slide-to="3"></li>
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="http://placehold.it/800x300" alt="Chania" width="460" height="345">
-                    </div>
-
-                    <div class="item">
-                        <img src="http://placehold.it/800x300" alt="Chania" width="460" height="345">
-                    </div>
-
-                    <div class="item">
-                        <img src="http://placehold.it/800x300" alt="Flower" width="460" height="345">
-                    </div>
-
-                    <div class="item">
-                        <img src="http://placehold.it/800x300" alt="Flower" width="460" height="345">
-                    </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+ 
 
             <div class="row">
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">R$24.99</h4>
-                            <h4><a href="#">Primeiro Produto</a>
-                            </h4>
-                            <p>Essa é uma breve descrição. Esse produto é blablablabla e tem blabla bla</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">15 votos</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">R$64.99</h4>
-                            <h4><a href="#">Segundo Produto</a>
-                            </h4>
-                            <p>Essa é uma breve descrição. Esse produto é blablablabla e tem blabla bla</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">12 votos</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">R$74.99</h4>
-                            <h4><a href="#">Third Product</a>
-                            </h4>
-                            <p>Essa é uma breve descrição. Esse produto é blablablabla e tem blabla bla</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">31 votos</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">R$84.99</h4>
-                            <h4><a href="#">Quarto Produto</a>
-                            </h4>
-                            <p>Essa é uma breve descrição. Esse produto é blablablabla e tem blabla bla</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">6 votos</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">R$94.99</h4>
-                            <h4><a href="#">Quinto Produto</a>
-                            </h4>
-                            <p>Essa é uma breve descrição. Esse produto é blablablabla e tem blabla bla</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">18 votos</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <h4><a href="#">É administrador?</a>
-                    </h4>
-                    <p>Se você tiver perfil administrador, você tem permissão para criar novos produtos </p>
-                    <a class="btn btn-primary" target="_blank" href="#">Adicionar</a>
-                </div>
+ 
+                
+            <router-outlet></router-outlet>
+               
 
             </div>
 
@@ -239,7 +89,12 @@
     </footer>
 
 </div>
-<router-outlet></router-outlet>
+
+<a [routerLink]="['/cadastrarProdutos']"> CadastrarProduto</a>
+
+<a [routerLink]="['/listarProdutos']"> ListarProdutos</a> 
+
+
 <script src="inline.bundle.js"></script>
 <script src="polyfills.bundle.js"></script>
 <script src="styles.bundle.js"></script>

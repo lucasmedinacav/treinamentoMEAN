@@ -13,22 +13,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><img src="https://a-static.mlcdn.com.br/1500x1500/tv-led-42-aoc-full-hd-le42m1475-conversor-digital-3-hdmi-1-usb/magazineluiza/193399400/1a19406dae67a689d0679067646c3d73.jpg"
-                                    class="img-rounded" alt="TV 42" width="100" height="100"></td>
-                            <td align="left">TV 42 Samsung</td>
-                            <td><input id="movie" max="100" min="0" type="number" value="0" /></td>
-                            <td>R$100,00</td>
-                            <td>R$100,00</td>
-                        </tr>
-                        <tr>
-                            <td><img src="http://thumbs.buscape.com.br/__PUr-f0d4_2.jpg" class="img-rounded" alt="TV 42" width="100"
-                                    height="100"></td>
-                            <td align="left">Bicicleta Caloi 21</td>
-                            <td><input id="movie" max="100" min="0" type="number" value="0" /></td>
-                            <td>R$250,00</td>
-                            <td>R$250,00</td>
-                        </tr>
+                        <tr *ngFor="let produto of produtos">
+                            <td><img src="{{produto.urlFoto}}" class="img-rounded" alt="TV 42" width="100" height="100"></td>
+                            <td align="left">{{produto.nome}}<br />{{produto.descricao}}</td>
+                            <td><input id="movie" max="100" min="0" type="number" [value]="produto.quantidade" (input)="produto.quantidade = $event.target.value" /></td>
+                            <td>{{produto.valor | currency:'BRL':true }}</td>
+                            <td>{{produto.quantidade * produto.valor | currency:'BRL':true}}</td>
+                        </tr>                     
                     </tbody>
                 </table>
             </div>
@@ -41,9 +32,9 @@
             <table>
                 <tbody>
                     <tr>
-                        <td class="text-capitalize col-xs-8">1 produto:</td>
+                        <td class="text-capitalize col-xs-8"> produto:</td>
                         <td class="text-uppercase">R$</td>
-                        <td id="basket-summary-subtotal" class="text-right col-xs-4">166,90</td>
+                        <td id="basket-summary-subtotal" class="text-right col-xs-4"></td>
                     </tr>
                     <tr>
                         <td class="text-capitalize col-xs-8">Frete (?):</td>
@@ -58,7 +49,7 @@
                     <tr class="text-primary summary-total">
                         <td class="text-capitalize col-xs-8">Total:</td>
                         <td class="text-uppercase">R$</td>
-                        <td class="text-uppercase text-right col-xs-4" id="total-amount">166,90</td>
+                        <td class="text-uppercase text-right col-xs-4" id="total-amount"> {{ getValorTotal() | currency:'BRL':true }} </td>
                     </tr>
                 </tfoot>
             </table><br /><br />

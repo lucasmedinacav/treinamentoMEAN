@@ -1,0 +1,22 @@
+<div class="container"> 
+    <div *ngFor="let produto of produtos">
+
+      <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+          <img style="max-height: 255px" src="{{produto.urlFoto}}" alt="">
+          <div class="caption" style="height: 110px;">
+            <h4 class="pull-right">{{produto.valor | currency:'BRL':true}}</h4>
+            <h4><a href="#">{{produto.nome}}</a>
+            </h4>
+            <p>{{produto.descricao}}</p>
+          </div>
+
+          <div>
+            <button (click)="selecionarProduto(produto)" class="btn btn-success">Adicionar ao Carrinho</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>     
+</div>

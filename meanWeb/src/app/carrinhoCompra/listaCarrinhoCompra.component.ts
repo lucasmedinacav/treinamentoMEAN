@@ -14,20 +14,36 @@ import { CarrinhoServiceModule } from './carrinho.service.module'
 
 
 export class ListaCarrinhoCompraComponent {
-  data: any = null;
+  public produtos: any = null;
   constructor(private _http: Http) {
-      this.ordemPagamento();
+      this.listarProdutos();
   }
 
-  ordemPagamento() {
+  private listarProdutos() {
     let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
     let options = new RequestOptions({ headers: headers });
     
-    return this._http.get('http://localhost:3002/moip/obterordempagamento') .map((res: Response) => res.json())
+    this._http.get('http://localhost:3002/produto/buscar').map((res: Response) => res.json())
       .subscribe(data => {
-        this.data = data;
-        console.log(this.data);
+        this.produtos = data;
+        console.log(this.produtos);
       });
   }
 
+  ordemPagamento() {
+    
+  }
+
+  getValorTotal() {
+    let total = 0;
+    if(this.produtos != undefined && this.produtos != null){
+      this.produtos.forEach(produto => {
+        total += (produto.quantidade * produto.valor);
+      });
+      return total;
+    }
+    
+    
+    return total;
+  }
 }
