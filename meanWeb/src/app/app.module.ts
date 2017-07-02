@@ -10,6 +10,9 @@ import { PrincipalModule } from './principal/principal.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
+import 'rxjs/add/operator/map';
+
+import "../polyfills";
 
 @NgModule({
   declarations: [
@@ -23,8 +26,7 @@ import { FooterComponent } from './footer/footer.component';
     HttpModule,
     TranslateModule.forRoot(),
     PrincipalModule],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

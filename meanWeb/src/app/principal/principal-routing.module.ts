@@ -10,10 +10,6 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "cadastroprodutos",
-    component: CadastroProdutosComponent
-  },
-  {
     path: "carrinho",
     component: CarrinhoComponent
   }
