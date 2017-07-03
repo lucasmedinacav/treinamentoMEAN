@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Overlay, overlayConfigFactory } from 'angular2-modal';
-import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
-import { LoginModalContext, LoginModal } from './../login-modal/login-modal.component';
 import { Usuario } from './user.object';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
@@ -9,16 +6,13 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-
-
 export class RegisterComponent implements OnInit {
-
   public usuario: Usuario;
   public senhaConfirmacao: string;
   public data: any;
   public showMsgError: boolean;
   public msgError: string;
-  constructor(private http: Http, public modal: Modal) {
+  constructor(private http: Http) {
     this.usuario = new Usuario;
   }
 
@@ -40,10 +34,6 @@ export class RegisterComponent implements OnInit {
 
       this.http.post(uriUsuario, options);
     }
-  }
-
-  public openLoginModal() {
-    return this.modal.open(LoginModal, overlayConfigFactory({}, BSModalContext));
   }
 
   public onChangeNome() {

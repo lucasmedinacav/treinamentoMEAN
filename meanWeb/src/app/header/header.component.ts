@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() { }
 
   openLoginModal() {
+    console.log(`abrindo do header`);
     return this.modal.open(LoginModal, overlayConfigFactory({}, BSModalContext));
   }
 
