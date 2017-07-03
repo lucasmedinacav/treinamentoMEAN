@@ -1,6 +1,6 @@
 var produtoDao = require('../daoimpl/produtoDAO');
 var mongoose = require('mongoose');
-let uri = 'mongodb://localhost:27017/mean';
+let uri = 'mongodb://localhost:27017/mock2';
 mongoose.connect(uri);
 
 exports.inserirProduto = function (nomeProd, desc, valor, quantidade, caminho, callback) {

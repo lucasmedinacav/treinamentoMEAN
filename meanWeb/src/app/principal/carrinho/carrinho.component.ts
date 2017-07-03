@@ -16,7 +16,8 @@ export class CarrinhoComponent implements OnInit {
   produtosSelecionados = [];
 
   constructor(private _http: Http, private cadastroProdutoService: CadastroProdutosService) {
-      this.produtos = this.listarProdutos();
+      this.produtos = this.cadastroProdutoService.getProdutosCarrinho();
+      this.cadastroProdutoService.printProdutos();
   }
 
   ngOnInit() {
@@ -43,5 +44,7 @@ export class CarrinhoComponent implements OnInit {
     
     return total;
   }
+
+  
 
 }

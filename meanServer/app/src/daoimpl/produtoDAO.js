@@ -2,7 +2,7 @@
 let mongoose = require('mongoose');
 let produtoSchema = require('../schema/produtoSchema')
 let model = mongoose.model("produto", produtoSchema);
-var produtoRedisDao = require('../cache/produtoRedisDAO');
+// var produtoRedisDao = require('../cache/produtoRedisDAO');
 
 function ProdutoDAO(){
     this.inserirProduto = inserirProduto;

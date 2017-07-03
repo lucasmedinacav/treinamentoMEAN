@@ -10,7 +10,7 @@ import { CadastroProdutosService } from '../cadastro-produtos/cadastro-produtos.
 export class HomeComponent implements OnInit {
   produtos: Produto[];
   errorMessage: string;  
-  produtosSelecionados = [];
+  produtosSelecionados = []; 
 
   constructor(private cadastroProdutoService: CadastroProdutosService) { }
 
@@ -31,7 +31,8 @@ export class HomeComponent implements OnInit {
         return false
       })) {
       produto.quantidade = 1;
-      this.produtosSelecionados.push(produto); 
+      this.produtosSelecionados.push(produto);
+      this.cadastroProdutoService.setProdutoCarrinho(produto); 
     } 
   }
 

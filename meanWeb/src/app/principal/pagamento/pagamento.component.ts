@@ -31,6 +31,6 @@ export class PagamentoComponent {
 
 
     voltarParaListaProdutos() : void {
-      this.location.back();
+      this.location.back();   
     }
 }

@@ -13,6 +13,7 @@ import 'rxjs/add/observable/throw';
 export class CadastroProdutosService {
     private _cadastroUrl = 'http://127.0.0.1:3002/produto/';
 
+    public produtos = [];
     constructor(private _http: Http) { }
 
     insertProduto(produto) {
@@ -39,6 +40,19 @@ export class CadastroProdutosService {
         .map((response: Response) => <Produto> response.json())
         .catch(this.handleError);
 
+    }
+
+
+    setProdutoCarrinho(produto){
+        this.produtos.push(produto);
+    }
+
+    getProdutosCarrinho(){
+        return this.produtos;
+    }
+
+    printProdutos(){
+        console.log(this.produtos);
     }
 
     private handleError(error: Response) {
