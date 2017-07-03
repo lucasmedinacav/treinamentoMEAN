@@ -9,21 +9,30 @@ function Pagamento(){
 }
 
 
-function inserirPagamento(dataComHora, statusPagamento, tipoPag, vlr, beneficiariosPagamento, quantidade){
-    model.create({dataHora : dataComHora, status : statusPagamento, tipoPagamento: tppag, valor : vlr, beneficiarios : beneficiariosPagamento, pedido: pedido}, function(erro, succsess){
-        if(erro){
-            throw erro;
-        }
-        console.log(sucsess);
+function inserirPagamento(razaoPagamento ,statusPagamento, tipoPagamento, codigoTransacao, dataHora,
+                             valorTotal, valorTaxa, valorliquido, usuario, beneficiarios, pedido){
+
+    return new Promise(function(resolve,reject){
+        model.create({  razaoPagamento: razaoPagamento,statusPagamento : statusPagamento, tipoPagamento : tipoPagamento, 
+                        codigoTransacao : codigoTransacao, dataHora : dataHora, valorTotal : valorTotal, valorTaxa : 
+                        valorTaxa, valorliquido : valorliquido,usuario : usuario, beneficiarios : beneficiarios, pedido: pedido}, 
+                        function(erro, succsess){
+            if(erro){
+                throw erro;
+            }
+            resolve(success);
+        });
     })
 }
 
-function buscarPagamento(dataComHora, statusPagamento, tipoPag, vlr, beneficiariosPagamento, quantidade){
-    model.find(function(erro, success){
-        if(erro){
-            throw erro;
-        }
-        console.log(success);
+function buscarPagamento(){
+    return new Promise(function(resolve, reject){
+        model.find(function(erro, success){
+            if(erro){
+                throw erro;
+            }
+            resolve(success);
+        });
     })
 }
 

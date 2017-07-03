@@ -1,0 +1,16 @@
+var express = require('express');
+var rotas = express.Router();
+
+let moipService = require('../../app/src/service/moip/moipService');
+
+rotas.get('/obterordempagamento', function(request, response){ 
+    console.log("MOIP OK");
+    moipService.obterOrdemPagamento().then(function(resultado){
+        response.json(resultado);
+    })
+});
+
+rotas.post('/efetivarpagamento', function(request, response){ 
+});
+
+module.exports = rotas;

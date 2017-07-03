@@ -21,8 +21,7 @@ export class CadastroProdutosService {
         var headers = new Headers();
         console.log(produto);
         headers.append("Content-Type", "application/json");
-        return this._http.post(this._cadastroUrl + 'inserirProduto', JSON.stringify(produto), { headers: headers })
-            .subscribe(() => {
+        return this._http.post(this._cadastroUrl + 'inserirProduto', JSON.stringify(produto), { headers: headers }).subscribe(() => {
                 console.log("Insercao de produto" + JSON.stringify(produto));
             }, erro => console.log(erro));
 

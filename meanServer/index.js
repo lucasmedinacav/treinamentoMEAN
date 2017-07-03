@@ -18,6 +18,7 @@ app.use(allowCors);
 var loginRota = require('./routes/loginroutes/login');
 var produtoRota = require('./routes/produtosroutes/produto');
 var carrinhoComprasRota = require('./routes/carrinhoroutes/carrinho');
+var moipRota = require('./routes/moiproutes/moip');
 
 //FALANDO QUE VAMOS UTILIZAR ESSAS ROTAS
 app.use(bodyParser.json());
@@ -29,7 +30,7 @@ app.use(bodyParser.urlencoded({
 app.use("/login", loginRota);
 app.use("/produto", produtoRota);
 app.use("/carrinho", carrinhoComprasRota);
-
+app.use("/moip", moipRota);
 
 app.listen(3002, function(){
     console.log('Servidor inicializado');

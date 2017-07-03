@@ -8,21 +8,25 @@ function BeneficiarioDAO(){
     this.buscarBeneficiario = buscarBeneficiario;
 }
 
-function inserirBeneficiario(nome, idMoipl){
-    beneficiarioModel.create({nome : nome, idMoipl : idMoipl},function(erro, succsess){
-        if(erro){
-            throw erro;
-        }
-        console.log(succsess);
-    });
+function inserirBeneficiario(nome, idMoip){
+    return new Promise(function(resolve, reject){
+        beneficiarioModel.create({nome : nome, idProprioMoip : idMoip}, function(erro, succsess){
+            if(erro){
+                throw erro;
+            }
+            resolve(succsess);
+        });
+    })
 }
 
 function buscarBeneficiario(){
-    beneficiarioModel.find(function(erro, succsess){
-        if(erro){
-            throw erro;
-        }
-        console.log(succsess);
+     return new Promise(function(resolve, reject){
+        beneficiarioModel.find(function(erro, succsess){
+            if(erro){
+                throw erro;
+            }
+            resolve(succsess);
+        });
     });
 }
 

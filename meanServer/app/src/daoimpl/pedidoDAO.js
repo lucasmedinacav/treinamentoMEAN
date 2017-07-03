@@ -4,25 +4,29 @@ let pedidoModel = mongoose.model("pedido", pedidoSchema);
 
 
 function PedidoDAO(){
-    this.inserirPedido = inserirPedido;
-    this.buscarPedido = buscarPedido;
+    this.criarPedido = inserirPedido;
+    this.consultarPedido = buscarPedido;
 }
 
-function inserirPedido(statusPram, data, itensPedido, total){
-    pedidoModel.create({status : statusPram, dataPedido : data, itens: itensPedido, totalPedido : total },function(erro, succsess){
-        if(erro){
-            throw erro;
-        }
-        console.log(sucsess);
+function inserirPedido(statusPram, data, usuario, itensPedido, total){
+    return new Promise(function(resolve, reject){
+        pedidoModel.create({status : statusPram, dataPedido : data, usuario: usuario, itens: itensPedido, totalPedido : total },function(erro, succsess){
+            if(erro){
+                throw erro;
+            }
+            resolve(succsess);
+        });
     });
 }
 
 function buscarPedido(){
-    pedidoModel.find(function(erro, succsess){
-        if(erro){
-            throw erro;
-        }
-        console.log(sucsess);
+    return new Promise(function(resolve, reject){
+        pedidoModel.find(function(erro, succsess){
+            if(erro){
+                throw erro;
+            }
+            resolve(succsess);
+        });
     });
 }
 
