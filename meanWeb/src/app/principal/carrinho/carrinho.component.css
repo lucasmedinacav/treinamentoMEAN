@@ -1,2 +1,9 @@
+.valor{
+    text-align: right;
+}
 
+.nomeProduto{
+    font-weight: bold;
+    font-size: 130%;
+}
 

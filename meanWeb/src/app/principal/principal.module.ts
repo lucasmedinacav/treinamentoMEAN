@@ -6,12 +6,14 @@ import { HomeComponent } from './home/home.component';
 import { CadastroProdutosComponent } from './cadastro-produtos/cadastro-produtos.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { CadastroProdutosModule } from './cadastro-produtos/cadastro-produtos.module';
+import { PagamentoModule } from './pagamento/pagamento.module';
 
 @NgModule({
   imports: [
     CommonModule,
     PrincipalRoutingModule,
-    CadastroProdutosModule
+    CadastroProdutosModule,
+    PagamentoModule
   ],
   exports:[HomeComponent],
   declarations: [HomeComponent, CarrinhoComponent],

@@ -9,7 +9,8 @@ import { CadastroProdutosService } from '../cadastro-produtos/cadastro-produtos.
 })
 export class HomeComponent implements OnInit {
   produtos: Produto[];
-  errorMessage: string;
+  errorMessage: string;  
+  produtosSelecionados = [];
 
   constructor(private cadastroProdutoService: CadastroProdutosService) { }
 
@@ -18,6 +19,20 @@ export class HomeComponent implements OnInit {
       this.produtos = produtos,
         erro => this.errorMessage = <any>erro
     });
+  }
+
+  public selecionarProduto(produto) {
+    if (!this.produtosSelecionados.find(
+      (item) => {
+        if (item._id == produto._id) {
+          item.quantidade++;
+          return true;
+        }
+        return false
+      })) {
+      produto.quantidade = 1;
+      this.produtosSelecionados.push(produto); 
+    } 
   }
 
 }
