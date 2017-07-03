@@ -1,0 +1,57 @@
+<script src="./moipWidget-v2.js"></script>
+<div class="container">
+    <div class="col-sm-6" style="padding: 0px; border-right: 1px #f2f2f2 solid;">
+        <div class="form-group row">
+            <label for="lgFormGroupInput" class="col-sm-4 col-form-label col-form-label-lg">Endereco de entrega:</label>
+            <div class="col-sm-8">
+                <output for="lgFormGroupInput" class="col-sm-8 col-form-label col-form-label-lg">{{ enderecoEntrega }}</output>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="lgFormGroupInput" class="col-sm-4 col-form-label col-form-label-lg">CEP:</label>
+            <div class="col-sm-8">
+                <output for="lgFormGroupInput" class="col-sm-8 col-form-label col-form-label-lg">{{ cep }}</output>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="lgFormGroupInput" class="col-sm-4 col-form-label col-form-label-lg">Cidade:</label>
+            <div class="col-sm-8">
+                <output for="lgFormGroupInput" class="col-sm-8 col-form-label col-form-label-lg">{{ cidade }}</output>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-5">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="text-capitalize col-xs-8">SubTotal:</td>
+                    <td class="text-uppercase">R$</td>
+                    <td id="basket-summary-subtotal" class="text-right col-xs-4">{{ subtotal }}</td>
+                </tr>
+                <tr>
+                    <td class="text-capitalize col-xs-8">Frete (?):</td>
+                    <td></td>
+                    <td class="text-right col-xs-4" colspan="2">-</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="table-divisor">
+                    <td colspan="3"></td>
+                </tr>
+                <tr class="text-primary summary-total">
+                    <td class="text-capitalize col-xs-8">Total:</td>
+                    <td class="text-uppercase">R$</td>
+                    <td class="text-uppercase text-right col-xs-4" id="total-amount"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<div class="container">
+    <ul class="nav-pills nav-justified" style="margin-bottom:20px; margin-top:20px; padding-left:0px">
+        <li><a routerLink="cartao" class="btn col-xs-12" routerLinkActive="btn-info">Cartão</a></li>
+        <li><a routerLink="boleto" class="btn col-xs-12" routerLinkActive="btn-info">Boleto</a></li>
+    </ul>
+    <router-outlet></router-outlet>
+</div>
