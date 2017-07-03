@@ -22,6 +22,7 @@
     "express": "^4.15.3",
     "mocha": "^3.4.2",
     "mongoose": "^4.11.0",
+    "node-moip": "0.0.2-2",
     "redis-connection": "^5.1.1"
   }
 }
