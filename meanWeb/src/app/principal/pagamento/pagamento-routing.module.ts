@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { PagamentoComponent } from './Pagamento.component';
-import { CartaoComponent } from './cartao.component';
-import { PagamentoComprovanteComponent } from './pagamento-comprovante.componente';
+import { CartaoComponent } from './cartao/cartao.component';
+import { PagamentoComprovanteComponent } from './pagamento-comprovante/pagamento-comprovante.componente';
 
 const routes: Routes = [
   {
@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path : 'comprovantePagamento',
     component : PagamentoComprovanteComponent
+  },
+  {
+    path: "pagamento",
+    component: PagamentoComponent
   }
 ];
 

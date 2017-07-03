@@ -13,10 +13,6 @@ const routes: Routes = [
   {
     path: "carrinho",
     component: CarrinhoComponent
-  },
-  {
-    path: "pagamento",
-    component: PagamentoComponent
   }
 ];
 

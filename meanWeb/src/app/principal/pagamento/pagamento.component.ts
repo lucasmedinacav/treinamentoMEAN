@@ -57,9 +57,9 @@ export class PagamentoComponent {
       Parcelas : "1" , 
       Recebimento:"AVista" , 
       CartaoCredito:{
-                    Numero: "4073020000000002" , 
+                    Numero: this.numeroCartao , 
                     Expiracao: "10/18" , 
-                    CodigoSeguranca: "123" , 
+                    CodigoSeguranca: this.codigoSeguranca , 
                     Portador : {
                                 Nome: "Lyoto Machida",
                                 DataNascimento: "17/11/1988",
