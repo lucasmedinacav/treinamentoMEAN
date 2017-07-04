@@ -2,11 +2,14 @@
   "HOME": {
     "TITLE": "Bonjour Angular 2 avec ng2-translate !",
     "SELECT": " Changer la langue",
-     "Products": " Des produits",
+    "Home": "Home",
+    "Products": " S'inscrire Des produits",
     "Categories": " Catégories",
     "Search": " Recherche",
+    "TypeYourProduct": "Tapez votre produit",
     "Your_shoppings": " Vos Achats",
     "Sign_up": " Inscriptions",
-    "Login" : " S'identifier"
+    "Login" : " S'identifier",
+    "Hello": "Bonjour"
   }
 }
