@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common'; 
 import { PagamentoService } from '../../pagamento.service';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+
+import { CadastroProdutosService } from '../../../cadastro-produtos/cadastro-produtos.service';
 
 @Component({
   moduleId: module.id,
@@ -9,16 +11,8 @@ import { Router } from '@angular/router'
   templateUrl: './cartao.component.html',
   
 })
-export class CartaoComponent {
- 
-  public enderecoEntrega: string = "Avenida: Interlagos, 3501";
-  public cep: string = "02229-020";
-  public cidade: string = "São Paulo - SP";
-
-  public subtotal: number = 166.90;
-  public frete: string;
-  public total: number = 166.90;
-
+export class CartaoComponent { 
+  
   public numeroCartao: string = "";
   public nomeImpressoCartao: string = "";
   public validade: string = "";
@@ -28,19 +22,17 @@ export class CartaoComponent {
 constructor(
     private location: Location,
     private pagamentoService: PagamentoService,
-    private rota: Router
-  ) { }
+    private rota: Router,
+    private cadastroProdutoService: CadastroProdutosService
+  ) {
+ 
+   }
+
   voltarParaListaProdutos(): void {
     this.location.back();
   }
 
-  pagarComCartaoCredito() {
-    //Boleto bancario
-    // var settings = {
-    //   "Forma": "BoletoBancario"
-    // };
-
-    // Cartao de credito
+  pagarComCartaoCredito() { 
     var settings = {
       Forma: "CartaoCredito",
       Instituicao: "Visa",
@@ -58,8 +50,12 @@ constructor(
         }
       }
     };
-    this.pagamentoService.efeturarPagamentoPorCartaoCredito(settings);
+    this.pagamentoService.efeturarPagamentoPorCartaoCredito(settings,"Leo e Carol","emailcarol@gmail.com", "CartaoCredito" ,"100.00");
     this.rota.navigateByUrl("/comprovantePagamento");
+    
   }
+
+  
+ 
 
 }
