@@ -26,7 +26,7 @@
                 <tr>
                     <td class="text-capitalize col-xs-8">SubTotal:</td>
                     <td class="text-uppercase">R$</td>
-                    <td id="basket-summary-subtotal" class="text-right col-xs-4">{{ subtotal }}</td>
+                    <td id="basket-summary-subtotal" class="text-right col-xs-4">{{ subtotal | currency:'BRL':true }}</td>
                 </tr>
                 <tr>
                     <td class="text-capitalize col-xs-8">Frete (?):</td>
@@ -41,7 +41,7 @@
                 <tr class="text-primary summary-total">
                     <td class="text-capitalize col-xs-8">Total:</td>
                     <td class="text-uppercase">R$</td>
-                    <td class="text-uppercase text-right col-xs-4" id="total-amount"></td>
+                    <td class="text-uppercase text-right col-xs-4" id="total-amount">{{ total | currency:'BRL':true }}</td>
                 </tr>
             </tfoot>
         </table>
@@ -50,8 +50,8 @@
 
 <div class="container">
     <ul class="nav-pills nav-justified" style="margin-bottom:20px; margin-top:20px; padding-left:0px">
-        <li><a routerLink="cartao" class="btn col-xs-12" routerLinkActive="btn-info">Cartão</a></li>
-        <li><a routerLink="boleto" class="btn col-xs-12" routerLinkActive="btn-info">Boleto</a></li>
+        <li><a routerLink="cartao" class="btn col-xs-12" routerLinkActive="btn-info"><span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span> Cartão</a></li>
+        <li><a routerLink="boleto" class="btn col-xs-12" routerLinkActive="btn-info"><span class="glyphicon glyphicon-barcode" aria-hidden="true"></span> Boleto</a></li>
     </ul>
     <router-outlet></router-outlet>
 </div>

@@ -11,13 +11,20 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class CadastroProdutosService {
+
+    public enderecoEntrega : string = "Av. Brigadeiro Faria Lima, 999";
+    public cep : string = "01452-000";
+    public cidade : string = "São Paulo";
+    public subtotal: number;
+    public frete: string;
+    public total: number;
+
     private _cadastroUrl = 'http://127.0.0.1:3002/produto/';
 
-    public produtos = [];
+    public produtos = [];   
     constructor(private _http: Http) { }
 
-    insertProduto(produto) {
-        console.log("inicio do metodo");
+    insertProduto(produto) { 
         var headers = new Headers();
         console.log(produto);
         headers.append("Content-Type", "application/json");
@@ -40,6 +47,15 @@ export class CadastroProdutosService {
         .catch(this.handleError);
 
     }
+    getValoresTotalProdutos(){
+        this.total = 0;
+        for(let produto of this.produtos){
+            this.total += (produto.valor * produto.quantidade);
+            
+        }
+        this.subtotal = this.total;
+        return this.total;
+    }
 
 
     setProdutoCarrinho(produto){
@@ -49,10 +65,7 @@ export class CadastroProdutosService {
     getProdutosCarrinho(){
         return this.produtos;
     }
-
-    printProdutos(){
-        console.log(this.produtos);
-    }
+ 
 
     private handleError(error: Response) {
         console.error(error);
