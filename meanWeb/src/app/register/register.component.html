@@ -1,21 +1,19 @@
-<section class="container main">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <h1>teste</h1>
-      <form (ngSubmit)="cadastrar()" class="row mw-register-space-top-32">
+<div class="col-sm-6 col-sm-offset-3">
+    <h1>Cadastre-se Aqui</h1>
+    <form (ngSubmit)="cadastrar()" class="row mw-register-space-top-32">
 
         <div id="alert_form" [hidden]='!showMsgError' class="form-group col-xs-12">
-          <div class="alert alert-danger">
-            <p><strong>Dados inválidos.</strong></p> 
-            {{ msgError }}
-          </div>
+            <div class="alert alert-danger">
+                <p><strong>Dados inválidos.</strong></p>
+                {{ msgError }}
+            </div>
         </div>
 
         <div id="nome_form" class="form-group col-xs-6">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input class="form-control" id="nome_usuario" name="nome_usuario" type="text" placeholder="Nome" [(ngModel)]="usuario.nome" (focusout)="onChangeNome()">
-          </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="form-control" id="nome_usuario" name="nome_usuario" type="text" placeholder="Nome" [(ngModel)]="usuario.nome" (focusout)="onChangeNome()">
+            </div>
         </div>
 
         <div id="sobrenome_form" class="form-group col-xs-6">
@@ -23,17 +21,17 @@
         </div>
 
         <div id="email_form" class="form-group col-xs-12">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-            <input class="form-control" id="email_usuario" name="email_usuario" type="mail" placeholder="Email" [(ngModel)]="usuario.email" (focusout)="onChangeEmail()">
-          </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input class="form-control" id="email_usuario" name="email_usuario" type="mail" placeholder="Email" [(ngModel)]="usuario.email" (focusout)="onChangeEmail()">
+            </div>
         </div>
 
         <div id="senha_form" class="form-group col-xs-6">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input class="form-control" id="senha_usuario" name="senha_usuario" type="password" placeholder="Senha" [(ngModel)]="usuario.senha" (focusout)="onChangeSenha()">
-          </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input class="form-control" id="senha_usuario" name="senha_usuario" type="password" placeholder="Senha" [(ngModel)]="usuario.senha" (focusout)="onChangeSenha()">
+            </div>
         </div>
 
         <div id="senhaConfirmacao_form" class="form-group col-xs-6">
@@ -41,10 +39,8 @@
         </div>
 
         <div class="form-group col-xs-12">
-          <span class="mw-register-space-left-8">Já tem seu cadastro? <a href="javascript:void(0)" (click)="openLoginModal()">Faça o login.</a></span>
-          <button class="btn btn-primary pull-right" type="submit">Cadastrar</button>
+            <span class="mw-register-space-left-8">Já tem seu cadastro? <a href="javascript:void(0)" (click)="openLoginModal()">Faça o login.</a></span>
+            <button class="btn btn-primary pull-right" type="submit">Cadastrar</button>
         </div>
-      </form>
-    </div>
-  </div>
-</section>
+    </form>
+</div>

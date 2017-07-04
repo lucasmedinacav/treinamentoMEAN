@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-            <a class="navbar-brand" routerLink="/home"><img class="logo" src="./assets/img/avanade.png" /></a>
+            <a class="logolink" routerLink="/home"><img class="logo" src="./assets/img/accentureBranco.png" /></a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -36,9 +36,9 @@
                         [ngClass]="getBandeiraAtual(lingua==translate.currentLang)">
                         <img src="./assets/img/{{lingua}}.png" class="bandeira"/></a>
                 </div>
-                <li><a routerLink="/carrinho"><span class="glyphicon glyphicon-shopping-cart"></span>{{ 'HOME.Your_shoppings' | translate }}</a></li>
-                <li><a href="#"><span ></span>{{ 'HOME.Sign_up' | translate }}</a></li>
-                <li (click)="openLoginModal()"><a class="glyphicon glyphicon-user" href="javascript:void(0)">{{ 'HOME.Login' | translate }}</a></li>
+                <li><a routerLink="/carrinho"><span class="glyphicon glyphicon-shopping-cart"></span>  {{ 'HOME.Your_shoppings' | translate }}</a></li>
+                <li><a routerLink="register"><span class="glyphicon glyphicon glyphicon-plus-sign"></span>  {{ 'HOME.Sign_up' | translate }}</a></li>
+                <li><a (click)="openLoginModal()" href="javascript:void(0)"><span class="glyphicon glyphicon-user"></span>  {{ 'HOME.Login' | translate }}</a></li>
             </ul>
         </div>
     </div>
