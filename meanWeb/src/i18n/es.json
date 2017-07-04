@@ -2,11 +2,14 @@
   "HOME": {
     "TITLE": "Hola Angular 2 con ng2-traducir!",
     "SELECT": "Cambiar idioma",
-    "Products": " Producto",
+    "Home": "Home",
+    "Products": " Registrar Producto",
     "Categories": " Categorías",
     "Search": " Búsqueda",
+    "TypeYourProduct": "Escriba su Producto",
     "Your_shoppings": " Sus compras",
     "Sign_up": " Regístrate",
-    "Login" : " Iniciar Sesión"
+    "Login" : " Iniciar Sesión",
+    "Hello": "Hola"
   }
 }

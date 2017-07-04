@@ -5,22 +5,29 @@
 
 .bandeiras {
     /*margin-left:150px;*/
-    float:left;
+    float: left;
     margin-top: 13px;
     margin-right: 15px;
 }
 
-.bandeira{
-    width:20px;
+.bandeira {
+    width: 20px;
     height: 20px;
+}
+
+.logolink {
+    margin-right: 15px;
+    vertical-align: middle;
 }
 
 .logo {
     margin-left: 15px;
     width: 125px;
     height: 35px;
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
 
-.bandeira-opaca{
+.bandeira-opaca {
     opacity: 0.3;
 }

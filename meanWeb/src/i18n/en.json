@@ -3,12 +3,14 @@
     "TITLE": "Hello Angular 2 with ng2-translate!",
     "SELECT": "Change language",
     "Home": "Home",
-    "Products": "Products",
+    "Products": "Register Products",
     "Categories": "Categories",
     "Search": "Search",
+    "TypeYourProduct": "Type your product",
     "Your_shoppings": "Your Shoppings",
     "Sign_up": "Sign Up",
-    "Login" : "Login"
+    "Login" : "Login",
+    "Hello": "Hello"
 
   }
 }
