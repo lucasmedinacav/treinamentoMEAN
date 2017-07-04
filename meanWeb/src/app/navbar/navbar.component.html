@@ -37,8 +37,11 @@
                         <img src="./assets/img/{{lingua}}.png" class="bandeira"/></a>
                 </div>
                 <li><a routerLink="/carrinho"><span class="glyphicon glyphicon-shopping-cart"></span>{{ 'HOME.Your_shoppings' | translate }}</a></li>
-                <li><a href="#"><span ></span>{{ 'HOME.Sign_up' | translate }}</a></li>
-                <li (click)="openLoginModal()"><a class="glyphicon glyphicon-user" href="javascript:void(0)">{{ 'HOME.Login' | translate }}</a></li>
+                <li *ngIf="isUsuarioLogado()"><a href="#"><span ></span>{{ 'HOME.Sign_up' | translate }}</a></li>
+                <li *ngIf="isUsuarioLogado()" (click)="openLoginModal()"><a class="glyphicon glyphicon-user" href="javascript:void(0)"> {{ 'HOME.Login' | translate }}</a></li>
+                <li *ngIf="!isUsuarioLogado()"><a ><span ></span>Bem Vindo   {{ usuarioNome }}</a></li>   
+                <li *ngIf="!isUsuarioLogado()" (click)="logout()"><a class="glyphicon glyphicon-user" href="javascript:void(0)">Logout</a></li>
+                
             </ul>
         </div>
     </div>

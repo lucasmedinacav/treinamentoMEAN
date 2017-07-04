@@ -43,14 +43,14 @@ constructor(
         Expiracao: this.validade,
         CodigoSeguranca: this.codigoSeguranca,
         Portador: {
-          Nome: "Lyoto Machida",
+          Nome: "Joao Carlos",
           DataNascimento: "17/11/1988",
           Telefone: "(12)9999-9999",
           Identidade: "888.457.824-84"
         }
       }
     };
-    this.pagamentoService.efeturarPagamentoPorCartaoCredito(settings,"Leo e Carol","emailcarol@gmail.com", "CartaoCredito" ,"100.00");
+    this.pagamentoService.efeturarPagamentoPorCartaoCredito(settings,"Joao Carlos","joaocarlos@gmail.com", "CartaoCredito" ,"100.00");
     this.rota.navigateByUrl("/comprovantePagamento");
     
   }

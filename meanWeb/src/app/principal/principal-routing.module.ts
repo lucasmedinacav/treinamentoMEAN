@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CadastroProdutosComponent } from './cadastro-produtos/cadastro-produtos.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
-
+import { AppComponent } from '../app.component';
+ 
 const routes: Routes = [
   {
     path: "home",
@@ -12,7 +13,19 @@ const routes: Routes = [
   {
     path: "carrinho",
     component: CarrinhoComponent
-  }
+  },
+  {
+    path : 'callback',
+    component : HomeComponent
+  },
+  {
+    path: "logado",
+    component: AppComponent
+  },
+  {
+    path: "logout",
+    component: AppComponent
+  },
 ];
 
 @NgModule({

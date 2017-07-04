@@ -490,8 +490,7 @@
 
 var moip = (function(){
 	return {
-		efetuarPagamento:function(json, token){
-			console.log(json);
+		efetuarPagamento:function(json, token){ 
 			MoipWidget(json, token);
 		}
 	}

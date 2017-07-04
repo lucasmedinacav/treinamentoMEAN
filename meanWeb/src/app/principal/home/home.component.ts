@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from '../cadastro-produtos/produto';
 import { CadastroProdutosService } from '../cadastro-produtos/cadastro-produtos.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,11 @@ import { CadastroProdutosService } from '../cadastro-produtos/cadastro-produtos.
 export class HomeComponent implements OnInit {
   produtos: Produto[];
   errorMessage: string;  
-  produtosSelecionados = []; 
+  produtosSelecionados = [];
 
-  constructor(private cadastroProdutoService: CadastroProdutosService) { }
+  constructor(private cadastroProdutoService: CadastroProdutosService, private route: ActivatedRoute) { 
+    
+  }
 
   ngOnInit() {
     this.cadastroProdutoService.listaProdutos().subscribe(produtos => {
