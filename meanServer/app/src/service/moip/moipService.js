@@ -1,5 +1,10 @@
 var moip = require("node-moip");
 	
+	
+
+function obterInformacoesPagamento(nomeComprador, emailComprador, formaPagamento, valorPagamento){
+ 
+
 	var payment = {
 	  token: "XUI4H3ANBMD7M7T8BXTW7SBNOYZB6E0M",
 	  appkey: "NEDTGNWYOT02LKDTWBDVQS7KECOBOCIO89DTCSYH",
@@ -16,19 +21,19 @@ var moip = require("node-moip");
             //                     }
             //                 ]
             //             },
-	      Razao: "Razão / Motivo do pagamento",
+	      Razao: "Compra de Servicos/Produtos Avanade Accenture",
 		  Valores: {
 		            Valor: {
 		                    _attr : { moeda : "BRL" },
-		                    _value : "100.00"
+		                    _value : valorPagamento
 		                    }
 	                },
 	      FormasPagamento: {
-	          FormaPagamento: ["BoletoBancario"], 
+	          FormaPagamento: [formaPagamento], 
 	      },
 	      Pagador:{
-	        Nome: "Carol da Silva",
-	        Email: "ze.silva@email.com",
+	        Nome: nomeComprador,
+	        Email: emailComprador,
 	        //IdPagador: "ze.silva1",
             //fullname: "Jose Santos",
             //birthdate: "1980-01-02",
@@ -49,6 +54,8 @@ var moip = require("node-moip");
 		}
 	};
 
+	return payment;
+}
 
 
 
@@ -56,10 +63,12 @@ function MoipService(){
     this.obterOrdemPagamento = obterOrdemPagamento;
 }
 
-function obterOrdemPagamento(){
+function obterOrdemPagamento(nomeComprador, emailComprador, formaPagamento, valorPagamento){
    return new Promise(function(resolve, reject){
+	   var informacoesPagamento = obterInformacoesPagamento(nomeComprador, emailComprador, formaPagamento, valorPagamento); 
+	   
         var Moip = new moip.Moip(); 
-        Moip.send(payment, function(response){ 
+        Moip.send(informacoesPagamento, function(response){ 
 		console.log(JSON.stringify(response));
         resolve(JSON.stringify(response));
         })  

@@ -1,1 +1,50 @@
-COMPROVANTE
+<div class="container">
+    <h1>Comprovante de Pagamento</h1>
+    <table class="table" style="margin-top:100px">
+        <thead>
+            <tr>
+                <th>Produto(s)</th>
+                <th>Quantidade</th>
+                <th class="valor">Valor Unitàrio</th>
+                <th class="valor">Valor Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let produto of produtos">
+                <td align="left"><span class="nomeProduto">{{ produto.nome }} </span></td>
+                <td>{{ produto.quantidade }}</td>
+                <td class="valor">{{ produto.valor | currency:'BRL':true }}</td>
+                <td class="valor">{{ produto.quantidade * produto.valor | currency:'BRL':true }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="col-xs-12">
+        <div style="float:right" class="jumbotron col-md-4">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="text-capitalize col-xs-8"> produto:</td>
+                        <td class="text-uppercase">R$</td>
+                        <td id="basket-summary-subtotal" class="text-right col-xs-4"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-capitalize col-xs-8">Frete (?):</td>
+                        <td></td>
+                        <td class="text-right col-xs-4" colspan="2">-</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="table-divisor">
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr class="text-primary summary-total">
+                        <td class="text-capitalize col-xs-8">Total:</td>
+                        <td class="text-uppercase">R$</td>
+                        <td class="text-uppercase text-right col-xs-4" id="total-amount"> {{ valorTotal | currency:'BRL':true }} </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+</div>

@@ -17,12 +17,23 @@ export class PagamentoService {
     public produtos = [];
     constructor(private _http: Http) { }
 
-    efeturarPagamentoPorCartaoCredito(settings) {
-        return this._http.get(this._cadastroUrl + 'obterordempagamento').map((res: Response) => res.json()).subscribe(data => {
+    efeturarPagamentoPorCartaoCredito(settings, nome, email, formaPagamento, valor) {
+        var urlMontadaRequisicao = '?nomeComprador='+nome+'&emailComprador='+email+'&formaPagamento='+formaPagamento+'&valorPagamento='+valor;
+        return this._http.get(this._cadastroUrl + 'obterordempagamento'+urlMontadaRequisicao).map((res: Response) => res.json()).subscribe(data => {
             var ordemPagamento = JSON.stringify(data);
             var strResposta = "{"+ data.substring(90,238)+ "}";
             var objResposta = JSON.parse(strResposta); 
-            this.pagamentoPorCartaoCredito(settings, objResposta)
+            this.efeturarPagamento(settings, objResposta)
+        });
+    }
+    
+    efeturarPagamentoPorBoleto(settings,  nome, email, formaPagamento, valor) {
+        var urlMontadaRequisicao = '?nomeComprador='+nome+'&emailComprador='+email+'&formaPagamento='+formaPagamento+'&valorPagamento='+valor;
+        return this._http.get(this._cadastroUrl + 'obterordempagamento'+urlMontadaRequisicao).map((res: Response) => res.json()).subscribe(data => {
+            var ordemPagamento = JSON.stringify(data);
+            var strResposta = "{"+ data.substring(90,238)+ "}";
+            var objResposta = JSON.parse(strResposta); 
+            this.efeturarPagamento(settings, objResposta)
         });
     }
 
@@ -31,8 +42,8 @@ export class PagamentoService {
         return Observable.throw(error.json().error || 'Server error');
     }
 
-    pagamentoPorCartaoCredito(settings, resposta){  
+    efeturarPagamento(settings, resposta){  
         var token = resposta['Resposta'][0]['Token'][0];
-        moip.efetuarPagamento(settings, token);
-    }
+        moip.efetuarPagamento(settings, token); 
+    } 
 }
