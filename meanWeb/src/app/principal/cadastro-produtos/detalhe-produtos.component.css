@@ -1,0 +1,26 @@
+.alinhar-centro{
+  text-align: center
+}
+
+.separator-vertical{
+  border-left: 1px solid rgba(128, 128, 128, 0.18);
+  min-height: 200px
+}
+
+.descricao_produto{
+  background-color: rgba(128, 128, 128, 0.18);
+  height: 50px;
+}
+
+.space-top{
+  margin-top:5px;
+}
+
+.labelNegrito{
+  font-weight: bold
+}
+
+.borda-vertical{
+  border-left:1px solid rgba(128, 128, 128, 0.18);
+  min-height: 200px
+}

@@ -51,7 +51,7 @@
 
         <div class="col-sm-4 col-lg-4 col-md-4" *ngFor="let produto of produtos">
             <div class="thumbnail">
-                <img src="{{produto.urlFoto}}" style="max-height: 255px" alt="">
+                <img (click)=openLoginModal(produto) src="{{produto.urlFoto}}" style="max-height: 255px" alt="">
                 <div class="caption" style="height: 110px;">
                     <h4 class="pull-right">{{produto.valor}}</h4>
                     <h4><a href="#">{{produto.nome}}</a>

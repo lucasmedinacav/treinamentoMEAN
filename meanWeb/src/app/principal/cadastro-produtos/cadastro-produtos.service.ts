@@ -18,13 +18,14 @@ export class CadastroProdutosService {
     public subtotal: number;
     public frete: string;
     public total: number;
+    public produtoDetalhe : any;
 
     private _cadastroUrl = 'http://127.0.0.1:3002/produto/';
 
-    public produtos = [];   
+    public produtos = [];
     constructor(private _http: Http) { }
 
-    insertProduto(produto) { 
+    insertProduto(produto) {
         var headers = new Headers();
         console.log(produto);
         headers.append("Content-Type", "application/json");
@@ -51,7 +52,7 @@ export class CadastroProdutosService {
         this.total = 0;
         for(let produto of this.produtos){
             this.total += (produto.valor * produto.quantidade);
-            
+
         }
         this.subtotal = this.total;
         return this.total;
@@ -65,7 +66,16 @@ export class CadastroProdutosService {
     getProdutosCarrinho(){
         return this.produtos;
     }
- 
+
+    setProdutoDetalhe(produto:any){
+      this.produtoDetalhe = produto;
+      console.log(this.produtoDetalhe);
+    }
+
+    getProdutoDetalhe() : any{
+      return this.produtoDetalhe;
+    }
+
 
     private handleError(error: Response) {
         console.error(error);
