@@ -17,7 +17,7 @@ export class LoginModalContext extends BSModalContext { }
 export class LoginModal implements CloseGuard, ModalComponent<LoginModalContext> {
 
   public usuario: Usuario;
- 
+
 
   constructor(public dialog: DialogRef<LoginModalContext>,  private router : Router) {
     this.usuario = new Usuario;
@@ -53,7 +53,7 @@ private oauth: OauthBrowser = new OauthBrowser();
   }
 
   public google() {
-    this.oauth.logInVia(this.googleProvider).then(success => { 
+    this.oauth.logInVia(this.googleProvider).then(success => {
       this.displayData();
     }, error => {
       console.log("ERROR: ", error);
@@ -62,7 +62,7 @@ private oauth: OauthBrowser = new OauthBrowser();
 
   displayData(){
     window.sessionStorage.setItem("usuario", "Joao Carlos");
-    this.close(); 
+    this.close();
     this.router.navigateByUrl("/logado");
   }
 

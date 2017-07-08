@@ -4,10 +4,14 @@ import { HomeComponent } from './home/home.component';
 import { CadastroProdutosComponent } from './cadastro-produtos/cadastro-produtos.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { AppComponent } from '../app.component';
- 
+
 const routes: Routes = [
   {
     path: "home",
+    component: HomeComponent
+  },
+  {
+    path: "home/:code",
     component: HomeComponent
   },
   {
